@@ -1,0 +1,43 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-col">
+        <p class="footer-brand">{{ site.title }}</p>
+        <p class="footer-desc">{{ site.description }}</p>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-heading">Topics</p>
+        <ul role="list">
+          <li><a href="{{ '/categories/iam' | relative_url }}">🔐 Identity & Access Management</a></li>
+          <li><a href="{{ '/categories/birds' | relative_url }}">🐦 Birds & Conservation</a></li>
+          <li><a href="{{ '/categories/cities' | relative_url }}">🏙️ Sustainable Cities</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-heading">Connect</p>
+        <ul role="list">
+          <li><a href="{{ '/feed.xml' | relative_url }}">RSS Feed</a></li>
+          <li><a href="{{ '/about' | relative_url }}">About</a></li>
+          {% if site.author.linkedin and site.author.linkedin != "" %}
+          <li><a href="{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          {% endif %}
+          {% if site.author.twitter and site.author.twitter != "" %}
+          <li><a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
+          {% endif %}
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        &copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}.
+        Built with <a href="https://jekyllrb.com" target="_blank" rel="noopener noreferrer">Jekyll</a>
+        &amp; hosted on <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
+      </p>
+    </div>
+  </div>
+</footer>

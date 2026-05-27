@@ -1,0 +1,109 @@
+# =============================================================================
+# Site Identity
+# =============================================================================
+title: "Tushar Choudhury"
+tagline: "Identity & Security • Birds & Nature • Sustainable Cities"
+description: >-
+  Personal blog covering Identity and Access Management (IAM),
+  birdwatching and conservation, and sustainable urban planning.
+author:
+  name: "Tushar Choudhury"
+  twitter: ""      # Add when ready (handle only, no @ symbol)
+  linkedin: "https://www.linkedin.com/in/tushar-choudhury-337273ba"
+
+url: "https://thinkidentity.github.io"
+baseurl: ""
+
+# =============================================================================
+# Build Settings
+# =============================================================================
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: "highlight"
+
+# =============================================================================
+# Plugins
+# =============================================================================
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# =============================================================================
+# Theme
+# Using a custom theme (no external gem) — all layouts live in _layouts/
+# =============================================================================
+# theme: minima    # Commented out — using fully custom layouts
+
+# =============================================================================
+# Pagination (enable later when you have 10+ posts)
+# =============================================================================
+# paginate: 5
+# paginate_path: "/page/:num/"
+
+# =============================================================================
+# Navigation — controls what appears in the top nav bar
+# =============================================================================
+nav_links:
+  - title: "IAM"
+    url: "/categories/iam"
+    icon: "🔐"
+    accent: "#2563eb"
+  - title: "Birds"
+    url: "/categories/birds"
+    icon: "🐦"
+    accent: "#16a34a"
+  - title: "Cities"
+    url: "/categories/cities"
+    icon: "🏙️"
+    accent: "#ea580c"
+  - title: "About"
+    url: "/about"
+    icon: ""
+    accent: ""
+
+# =============================================================================
+# Exclude from build — these files will NOT be in the published site
+# =============================================================================
+exclude:
+  - plan_n_execution/
+  - claude.md
+  - LICENSE-CONTENT
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
+  - "*.sh"
+  - .sass-cache/
+  - .jekyll-cache/
+  - vendor/
+  - node_modules/
+  - README.md
+
+# =============================================================================
+# Defaults — apply front matter to all posts automatically
+# =============================================================================
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Tushar Choudhury"
+  - scope:
+      path: "categories"
+    values:
+      layout: "category"
+
+# =============================================================================
+# Feed (RSS) settings
+# jekyll-feed outputs to /atom.xml so we can own /feed.xml ourselves
+# with a proper XSL stylesheet for browser rendering.
+# =============================================================================
+feed:
+  path: /atom.xml
+  posts_limit: 20

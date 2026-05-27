@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Content Security Policy
+     Restricts what resources can load on this page.
+     - script-src: only self + jsDelivr CDN (for Mermaid) + 'unsafe-inline' for nav toggle script
+     - style-src:  only self + 'unsafe-inline' for CSS custom properties on nav links
+     - img-src:    self, data URIs (Mermaid SVG), and any https image
+     - object-src: blocked entirely (no Flash/plugins)
+     - frame-ancestors: blocks this site from being embedded in iframes (anti-clickjacking)
+     - base-uri:   prevents <base> tag injection attacks
+     - form-action: no forms on this blog, so block all form submissions
+-->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'none';
+  script-src  'self' https://cdn.jsdelivr.net 'unsafe-inline';
+  style-src   'self' 'unsafe-inline';
+  img-src     'self' data: https:;
+  font-src    'self';
+  connect-src 'none';
+  object-src  'none';
+  base-uri    'self';
+  form-action 'none';
+  frame-src   'none';
+  frame-ancestors 'none';
+">
+
+<title>
+  {%- if page.title -%}
+    {{ page.title }} — {{ site.title }}
+  {%- else -%}
+    {{ site.title }} | {{ site.tagline }}
+  {%- endif -%}
+</title>
+
+<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
+
+<!-- SEO -->
+{% seo %}
+
+<!-- Stylesheet -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<!-- Syntax highlighting (Rouge) -->
+<link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
+
+<!-- RSS Feed autodiscovery (lets browsers and RSS readers find the feed automatically) -->
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
+
+<!-- Favicon (add your own later to assets/images/favicon.ico) -->
+<!-- <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}"> -->
