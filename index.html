@@ -1,0 +1,138 @@
+---
+layout: default
+title: Home
+---
+
+<!-- Hero -->
+<section class="home-hero">
+  <div class="container">
+    <p class="hero-greeting">Hi, I'm Tushar 👋</p>
+    <h1 class="hero-title">
+      Thoughts on Security,<br>
+      Nature &amp; Sustainable Cities
+    </h1>
+    <p class="hero-description">
+      I work in Identity and Access Management, watch birds whenever I can,
+      and think a lot about how cities could be built better. This is where
+      those ideas land.
+    </p>
+    <div class="hero-links">
+      <a href="{{ '/about' | relative_url }}" class="hero-link primary">About me →</a>
+      <a href="{{ '/feed.xml' | relative_url }}" class="hero-link secondary">RSS Feed</a>
+    </div>
+  </div>
+</section>
+
+<!-- Three Pillars -->
+<section class="home-pillars">
+  <div class="container">
+    <p class="section-title">What I write about</p>
+    <div class="pillar-grid">
+
+      <a href="{{ '/categories/iam' | relative_url }}" class="pillar-card pillar-iam">
+        <div class="pillar-icon">🔐</div>
+        <div class="pillar-title">Identity &amp; Access Management</div>
+        <p class="pillar-description">
+          Deep dives into OAuth, SAML, Zero Trust, and enterprise IAM architecture.
+          Practical guides, diagrams, and lessons from the field.
+        </p>
+        <span class="pillar-cta">Read IAM posts →</span>
+      </a>
+
+      <a href="{{ '/categories/birds' | relative_url }}" class="pillar-card pillar-birds">
+        <div class="pillar-icon">🐦</div>
+        <div class="pillar-title">Birds &amp; Conservation</div>
+        <p class="pillar-description">
+          Field notes, species journals, photography from Indian habitats,
+          and thoughts on ecological sustainability and conservation.
+        </p>
+        <span class="pillar-cta">Read Birds posts →</span>
+      </a>
+
+      <a href="{{ '/categories/cities' | relative_url }}" class="pillar-card pillar-cities">
+        <div class="pillar-icon">🏙️</div>
+        <div class="pillar-title">Sustainable Cities</div>
+        <p class="pillar-description">
+          Planning frameworks, transit-oriented development, and how Indian cities
+          can learn from global examples to build more liveable futures.
+        </p>
+        <span class="pillar-cta">Read Cities posts →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Recent Posts per category -->
+<section class="home-recent">
+  <div class="container">
+
+    {% assign iam_posts    = site.posts | where_exp: "p", "p.categories contains 'iam' or p.category == 'iam'" | limit: 4 %}
+    {% assign birds_posts  = site.posts | where_exp: "p", "p.categories contains 'birds' or p.category == 'birds'" | limit: 4 %}
+    {% assign cities_posts = site.posts | where_exp: "p", "p.categories contains 'cities' or p.category == 'cities'" | limit: 4 %}
+
+    {% if iam_posts.size > 0 %}
+    <div class="recent-section">
+      <div class="recent-section-header">
+        <h2>🔐 Latest IAM</h2>
+        <a href="{{ '/categories/iam' | relative_url }}">View all →</a>
+      </div>
+      <div class="recent-posts">
+        {% for post in iam_posts %}
+        <div class="recent-post-item">
+          <div class="recent-post-info">
+            <a href="{{ post.url | relative_url }}" class="recent-post-title">{{ post.title }}</a>
+            <div class="recent-post-date">{{ post.date | date: "%b %-d, %Y" }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if birds_posts.size > 0 %}
+    <div class="recent-section">
+      <div class="recent-section-header">
+        <h2>🐦 Latest Birds</h2>
+        <a href="{{ '/categories/birds' | relative_url }}">View all →</a>
+      </div>
+      <div class="recent-posts">
+        {% for post in birds_posts %}
+        <div class="recent-post-item">
+          <div class="recent-post-info">
+            <a href="{{ post.url | relative_url }}" class="recent-post-title">{{ post.title }}</a>
+            <div class="recent-post-date">{{ post.date | date: "%b %-d, %Y" }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if cities_posts.size > 0 %}
+    <div class="recent-section">
+      <div class="recent-section-header">
+        <h2>🏙️ Latest Cities</h2>
+        <a href="{{ '/categories/cities' | relative_url }}">View all →</a>
+      </div>
+      <div class="recent-posts">
+        {% for post in cities_posts %}
+        <div class="recent-post-item">
+          <div class="recent-post-info">
+            <a href="{{ post.url | relative_url }}" class="recent-post-title">{{ post.title }}</a>
+            <div class="recent-post-date">{{ post.date | date: "%b %-d, %Y" }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if site.posts.size == 0 %}
+    <div class="empty-state">
+      <p>First posts coming soon — check back shortly! 🚀</p>
+    </div>
+    {% endif %}
+
+  </div>
+</section>

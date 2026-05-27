@@ -1,0 +1,41 @@
+<header class="site-header">
+  <div class="container">
+    <a href="{{ '/' | relative_url }}" class="site-brand">
+      <span class="brand-name">{{ site.title }}</span>
+      <span class="brand-tagline">{{ site.tagline }}</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" role="list">
+        {% for link in site.nav_links %}
+        <li>
+          <a href="{{ link.url | relative_url }}"
+             class="nav-link {% if page.url contains link.url %}active{% endif %}"
+             {% if link.accent %}style="--accent: {{ link.accent }}"{% endif %}>
+            {%- if link.icon %}<span class="nav-icon" aria-hidden="true">{{ link.icon }}</span>{% endif -%}
+            {{ link.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile nav toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var navLinks = document.querySelector('.nav-links');
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        var expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !expanded);
+        navLinks.classList.toggle('open');
+      });
+    }
+  });
+</script>

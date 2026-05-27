@@ -1,0 +1,228 @@
+@use "variables" as *;
+@use "sass:color";
+
+// =============================================================================
+// Home Page
+// =============================================================================
+
+// Hero
+.home-hero {
+  padding: 3.5rem 0 3rem;
+  border-bottom: 1px solid $color-border;
+  text-align: center;
+
+  @media (min-width: $bp-md) {
+    padding: 5rem 0 4rem;
+    text-align: left;
+  }
+}
+
+.hero-greeting {
+  font-size: $text-sm;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $color-text-faint;
+  margin-bottom: 0.75rem;
+}
+
+.hero-title {
+  font-size: $text-3xl;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+
+  @media (min-width: $bp-md) { font-size: $text-4xl; }
+}
+
+.hero-description {
+  font-size: $text-lg;
+  color: $color-text-muted;
+  max-width: 540px;
+  line-height: 1.65;
+  margin: 0 auto 1.5rem;
+
+  @media (min-width: $bp-md) { margin: 0 0 1.5rem; }
+}
+
+.hero-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (min-width: $bp-md) { justify-content: flex-start; }
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: $text-sm;
+  font-weight: 600;
+  padding: 0.5rem 1.125rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid transparent;
+  text-decoration: none;
+  transition: all $transition-base;
+
+  &.primary {
+    background: $color-iam;
+    color: #fff;
+    border-color: $color-iam;
+    &:hover { background: color.adjust($color-iam, $lightness: -8%); text-decoration: none; }
+  }
+
+  &.secondary {
+    background: transparent;
+    color: $color-text-muted;
+    border-color: $color-border;
+    &:hover { border-color: $color-text-muted; color: $color-text; text-decoration: none; }
+  }
+}
+
+// =============================================================================
+// Pillars section
+// =============================================================================
+.home-pillars {
+  padding: 3rem 0;
+}
+
+.section-title {
+  font-size: $text-xs;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $color-text-faint;
+  margin-bottom: 1.5rem;
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pillar-card {
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid $color-border;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: border-color $transition-base, box-shadow $transition-base, transform $transition-base;
+  background: $color-bg;
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+  }
+
+  &.pillar-iam   { &:hover { border-color: $color-iam; } }
+  &.pillar-birds { &:hover { border-color: $color-birds; } }
+  &.pillar-cities { &:hover { border-color: $color-cities; } }
+}
+
+.pillar-icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 0.875rem;
+}
+
+.pillar-title {
+  font-size: $text-lg;
+  font-weight: 700;
+  color: $color-text;
+  margin-bottom: 0.5rem;
+
+  .pillar-iam   & { color: $color-iam;    }
+  .pillar-birds & { color: $color-birds;  }
+  .pillar-cities & { color: $color-cities; }
+}
+
+.pillar-description {
+  font-size: $text-sm;
+  color: $color-text-muted;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.pillar-cta {
+  font-size: $text-sm;
+  font-weight: 600;
+  color: $color-text-faint;
+  transition: color $transition-fast;
+
+  .pillar-iam:hover    & { color: $color-iam;    }
+  .pillar-birds:hover  & { color: $color-birds;  }
+  .pillar-cities:hover & { color: $color-cities; }
+}
+
+// =============================================================================
+// Recent Posts — per category
+// =============================================================================
+.home-recent {
+  padding: 0 0 3rem;
+}
+
+.recent-section { margin-bottom: 3rem; }
+
+.recent-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid $color-border;
+
+  h2 {
+    font-size: $text-base;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  a { font-size: $text-sm; color: $color-text-muted; &:hover { color: $color-iam; } }
+}
+
+.recent-posts { display: flex; flex-direction: column; gap: 0; }
+
+.recent-post-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid $color-border;
+
+  &:last-child { border-bottom: none; }
+}
+
+.recent-post-info { flex: 1; min-width: 0; }
+
+.recent-post-title {
+  font-size: $text-sm;
+  font-weight: 600;
+  color: $color-text;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  display: block;
+
+  &:hover { color: $color-iam; text-decoration: none; }
+}
+
+.recent-post-date {
+  font-size: $text-xs;
+  color: $color-text-faint;
+  margin-top: 0.125rem;
+}

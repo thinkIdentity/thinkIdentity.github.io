@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+{%- assign category = page.categories | first | default: page.category -%}
+{%- assign cat_lower = category | downcase | replace: " ", "-" | replace: "'", "" | replace: '"', "" -%}
+{%- comment -%} Sanitise cat_lower before it is used in a CSS class and href — strips spaces and quotes {%- endcomment -%}
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header container">
+
+    {%- if category %}
+    <a href="{{ '/categories/' | append: cat_lower | relative_url }}" class="category-badge cat-{{ cat_lower }}">
+      {%- if cat_lower == 'iam' %}🔐 IAM
+      {%- elsif cat_lower == 'birds' %}🐦 Birds
+      {%- elsif cat_lower == 'cities' %}🏙️ Cities
+      {%- else %}{{ category }}
+      {%- endif %}
+    </a>
+    {%- endif %}
+
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%B %-d, %Y" }}
+      </time>
+      {%- if page.author %}
+      <span class="post-author" itemprop="author">{{ page.author }}</span>
+      {%- endif %}
+      {%- if page.tags and page.tags.size > 0 %}
+      <span class="post-tags">
+        {%- for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+        {%- endfor %}
+      </span>
+      {%- endif %}
+    </div>
+
+    {%- if page.image %}
+    <div class="post-hero-image">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" loading="lazy">
+    </div>
+    {%- endif %}
+
+  </header>
+
+  <div class="post-content container" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer container">
+    <div class="post-nav">
+      {%- if page.previous.url %}
+      <a href="{{ page.previous.url | relative_url }}" class="post-nav-prev">
+        <span>← Previous</span>
+        <span class="post-nav-title">{{ page.previous.title }}</span>
+      </a>
+      {%- endif %}
+      {%- if page.next.url %}
+      <a href="{{ page.next.url | relative_url }}" class="post-nav-next">
+        <span>Next →</span>
+        <span class="post-nav-title">{{ page.next.title }}</span>
+      </a>
+      {%- endif %}
+    </div>
+  </footer>
+
+</article>
