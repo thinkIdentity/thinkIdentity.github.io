@@ -1,0 +1,63 @@
+<section class="comments-section" id="comments">
+  <div class="container">
+
+    <div class="comments-header">
+      <h2 class="comments-title">Discussion</h2>
+      <p class="comments-note">
+        Powered by <a href="https://giscus.app" target="_blank" rel="noopener noreferrer">Giscus</a>
+        via GitHub Discussions. A GitHub account is required to comment.
+      </p>
+    </div>
+
+    <!--
+      GISCUS CONFIGURATION — TWO PLACEHOLDERS TO FILL IN BEFORE PUBLISHING:
+      =========================================================================
+      Step 1: Enable GitHub Discussions on your repo:
+              GitHub repo → Settings → General → Features → check "Discussions"
+
+      Step 2: Install Giscus GitHub App:
+              https://github.com/apps/giscus → Install → select this repo only
+
+      Step 3: Go to https://giscus.app, enter your repo name, then copy:
+              - data-repo-id       (replace REPO_ID_PLACEHOLDER below)
+              - data-category-id   (replace CATEGORY_ID_PLACEHOLDER below)
+
+      Step 4: Create a Discussion category called "Blog Comments" in your repo's
+              Discussions tab before the first comment is posted.
+
+      After repo rename to thinkidentity.github.io, also update data-repo value.
+      =========================================================================
+    -->
+    <script src="https://giscus.app/client.js"
+        data-repo="thinkIdentity/thinkIdentity.github.io"
+            data-repo-id="R_kgDOSnWR-g"
+            data-category="Blog Comments"
+            data-category-id="DIC_kwDOSnWR-s4C-JyQ"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="preferred_color_scheme"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <!-- data-theme is set to preferred_color_scheme (respects OS dark/light setting).
+         When the blog's dark/light toggle is implemented, replace with a JS call:
+           document.querySelector('iframe.giscus-frame')
+             .contentWindow.postMessage(
+               { giscus: { setConfig: { theme: isDark ? 'dark_dimmed' : 'light' } } },
+               'https://giscus.app'
+             );
+    -->
+
+    <noscript>
+      <p class="comments-noscript">
+        Comments require JavaScript. Please enable it to join the discussion.
+      </p>
+    </noscript>
+
+  </div>
+</section>
