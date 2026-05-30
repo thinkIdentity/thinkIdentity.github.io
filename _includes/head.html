@@ -3,25 +3,27 @@
 
 <!-- Content Security Policy
      Restricts what resources can load on this page.
-     - script-src: only self + jsDelivr CDN (for Mermaid) + 'unsafe-inline' for nav toggle script
-     - style-src:  only self + 'unsafe-inline' for CSS custom properties on nav links
-     - img-src:    self, data URIs (Mermaid SVG), and any https image
-     - object-src: blocked entirely (no Flash/plugins)
-     - frame-ancestors: blocks this site from being embedded in iframes (anti-clickjacking)
-     - base-uri:   prevents <base> tag injection attacks
-     - form-action: no forms on this blog, so block all form submissions
+     - script-src:     self + jsDelivr (Mermaid) + giscus.app (comments) + 'unsafe-inline' for nav toggle
+     - style-src:      self + 'unsafe-inline' for CSS custom properties
+     - img-src:        self, data URIs (Mermaid SVG), any https image
+     - connect-src:    giscus.app + api.github.com (Giscus fetches GitHub Discussions API)
+     - frame-src:      giscus.app (Giscus widget runs inside an iframe)
+     - object-src:     blocked entirely (no Flash/plugins)
+     - frame-ancestors: blocks this site from being embedded (anti-clickjacking)
+     - base-uri:       prevents <base> tag injection attacks
+     - form-action:    no forms on this blog
 -->
 <meta http-equiv="Content-Security-Policy" content="
-  default-src 'none';
-  script-src  'self' https://cdn.jsdelivr.net 'unsafe-inline';
-  style-src   'self' 'unsafe-inline';
-  img-src     'self' data: https:;
-  font-src    'self';
-  connect-src 'none';
-  object-src  'none';
-  base-uri    'self';
-  form-action 'none';
-  frame-src   'none';
+  default-src     'none';
+  script-src      'self' https://cdn.jsdelivr.net https://giscus.app 'unsafe-inline';
+  style-src       'self' 'unsafe-inline';
+  img-src         'self' data: https:;
+  font-src        'self';
+  connect-src     https://giscus.app https://api.github.com;
+  object-src      'none';
+  base-uri        'self';
+  form-action     'none';
+  frame-src       https://giscus.app;
   frame-ancestors 'none';
 ">
 

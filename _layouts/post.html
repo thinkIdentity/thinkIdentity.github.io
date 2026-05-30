@@ -68,3 +68,12 @@ layout: default
   </footer>
 
 </article>
+
+{%- comment -%}
+  Comments are selectively enabled by category.
+  Currently: IAM only. To add another category: or cat_lower == 'birds'
+  To disable a single post: add  comments: false  to its front matter.
+{%- endcomment -%}
+{%- if cat_lower == 'iam' and page.comments != false -%}
+  {% include comments.html %}
+{%- endif -%}
