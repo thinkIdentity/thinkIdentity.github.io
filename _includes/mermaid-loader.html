@@ -6,34 +6,161 @@
         integrity="sha384-yQ4mmBBT+vhTAwjFH0toJXNYJ6O4usWnt6EPIdWwrRvx2V/n5lXuDZQwQFeSFydF"
         crossorigin="anonymous"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Convert kramdown-rendered fenced code blocks (```mermaid) into Mermaid divs.
-    // Kramdown renders them as: <pre><code class="language-mermaid">...</code></pre>
-    document.querySelectorAll('code.language-mermaid').forEach(function (el) {
-      var pre = el.parentElement;
-      var div = document.createElement('div');
-      div.className = 'mermaid';
-      div.textContent = el.textContent;
-      pre.parentNode.replaceChild(div, pre);
+  (function () {
+
+    // ── Global class palette ─────────────────────────────────────────────────
+    // These are auto-injected into every flowchart/graph diagram so you never
+    // need to copy classDef blocks into individual posts.
+    // Usage in any diagram:   class NodeName iam
+    // Or inline syntax:       NodeName:::iam
+    var GLOBAL_CLASSDEFS = [
+      'classDef iam     fill:#1e3a5f,stroke:#3b82f6,stroke-width:2px,color:#fff',
+      'classDef success fill:#1e4620,stroke:#22c55e,stroke-width:2px,color:#fff',
+      'classDef danger  fill:#7f1d1d,stroke:#ef4444,stroke-width:2px,color:#fff',
+      'classDef neutral fill:#1e293b,stroke:#475569,stroke-width:2px,color:#fff',
+      'classDef warning fill:#431407,stroke:#ea580c,stroke-width:2px,color:#fff',
+      'classDef info    fill:#312e81,stroke:#818cf8,stroke-width:2px,color:#fff',
+      'classDef birds   fill:#1e4620,stroke:#4ade80,stroke-width:2px,color:#fff',
+      'classDef cities  fill:#431407,stroke:#fb923c,stroke-width:2px,color:#fff',
+    ].join('\n    ');
+
+    // Only flowchart/graph support classDef; others (erDiagram, mindmap, etc.) do not
+    var CLASSDEF_SUPPORTED = /^\s*(flowchart|graph\s)/i;
+
+    // Prepend global classDefs after the diagram type declaration line
+    function injectClassDefs(source) {
+      if (!CLASSDEF_SUPPORTED.test(source)) return source; // unsupported type
+      if (source.indexOf('classDef') !== -1) return source; // already defined
+
+      var lines = source.split('\n');
+      for (var i = 0; i < lines.length; i++) {
+        var line = lines[i].trim();
+        if (line === '' || line.startsWith('%%')) continue; // skip init/blank
+        lines.splice(i + 1, 0, '    ' + GLOBAL_CLASSDEFS);
+        break;
+      }
+      return lines.join('\n');
+    }
+
+    // ── Theme variables ───────────────────────────────────────────────────────
+    var THEMES = {
+      // light: {
+      //   mermaidTheme: 'base',
+      //   themeVariables: {
+      //     primaryColor:        '#2563eb',
+      //     primaryTextColor:    '#ffffff',
+      //     primaryBorderColor:  '#1d4ed8',
+      //     lineColor:           '#64748b',
+      //     secondaryColor:      '#1e40af',
+      //     tertiaryColor:       '#1e3a5f',
+      //     background:          '#ffffff',
+      //     mainBkg:             '#2563eb',
+      //     nodeBorder:          '#1d4ed8',
+      //     clusterBkg:          '#eff6ff',
+      //     titleColor:          '#1e293b',
+      //     edgeLabelBackground: '#e2e8f0',
+      //     fontFamily:          '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      //     fontSize:            '14px'
+      //   },
+      //   themeCSS: '.edgeLabel .label { fill: #1e293b !important; color: #1e293b !important; } .edgeLabel foreignObject div { color: #1e293b !important; }'
+      // },
+      light: {
+        mermaidTheme: 'base',
+        themeVariables: {
+          primaryColor:        '#2563eb',
+          primaryTextColor:    '##707781',
+          primaryBorderColor:  '#1d4ed8',
+          lineColor:           '#475569',
+          secondaryColor:      '#e2e8f0',
+          tertiaryColor:       '#f1f5f9',
+          background:          '#ffffff',
+          mainBkg:             '#dbeafe',
+          nodeBorder:          '#1d4ed8',
+          clusterBkg:          '#f1f5f9',
+          titleColor:          '#1e293b',
+          edgeLabelBackground: '#e2e8f0',
+          fontFamily:          '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+          fontSize:            '14px'
+        },
+        themeCSS: '.edgeLabel .label { fill: #1e293b !important; color: #1e293b !important; } .edgeLabel foreignObject div { color: #1e293b !important; }'
+      },
+      dark: {
+        mermaidTheme: 'dark',
+        themeVariables: {
+          primaryColor:        '#1e3a5f',
+          primaryTextColor:    '#f1f5f9',
+          primaryBorderColor:  '#60a5fa',
+          lineColor:           '#94a3b8',
+          secondaryColor:      '#1e293b',
+          tertiaryColor:       '#334155',
+          background:          '#0f172a',
+          mainBkg:             '#1e3a5f',
+          nodeBorder:          '#60a5fa',
+          clusterBkg:          '#1e293b',
+          titleColor:          '#f1f5f9',
+          edgeLabelBackground: '#334155',
+          fontFamily:          '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+          fontSize:            '14px'
+        },
+        themeCSS: '.edgeLabel .label { fill: #f1f5f9 !important; color: #f1f5f9 !important; } .edgeLabel foreignObject div { color: #f1f5f9 !important; }'
+      }
+    };
+
+    // ── Core functions ────────────────────────────────────────────────────────
+
+    // Convert ```mermaid fenced blocks → <div class="mermaid">, storing raw source
+    function convertBlocks() {
+      document.querySelectorAll('code.language-mermaid').forEach(function (el) {
+        var pre = el.parentElement;
+        var div = document.createElement('div');
+        div.className = 'mermaid';
+        div.setAttribute('data-source', el.textContent); // raw source for re-renders
+        div.textContent = injectClassDefs(el.textContent);
+        pre.parentNode.replaceChild(div, pre);
+      });
+    }
+
+    function initMermaid(theme) {
+      var cfg = THEMES[theme] || THEMES.light;
+      mermaid.initialize({
+        startOnLoad:    false,
+        theme:          cfg.mermaidTheme,
+        themeVariables: cfg.themeVariables,
+        themeCSS:       cfg.themeCSS || '',
+        flowchart:      { curve: 'basis' },
+        sequence:       { actorMargin: 50 }
+      });
+    }
+
+    // Restore raw source, re-inject classDefs, reset Mermaid state, re-render
+    function renderDiagrams() {
+      var diagrams = document.querySelectorAll('.mermaid');
+      diagrams.forEach(function (div) {
+        var src = div.getAttribute('data-source');
+        if (src) {
+          div.textContent = injectClassDefs(src);
+          div.removeAttribute('data-processed');
+        }
+      });
+      if (diagrams.length) mermaid.init(undefined, diagrams);
+    }
+
+    // Called by theme.js when the user switches light ↔ dark
+    window.reinitMermaid = function (theme) {
+      initMermaid(theme);
+      renderDiagrams();
+    };
+
+    // Initial render
+    document.addEventListener('DOMContentLoaded', function () {
+      convertBlocks();
+      var currentTheme = (window.blogTheme && window.blogTheme.getTheme)
+        ? window.blogTheme.getTheme()
+        : (document.documentElement.getAttribute('data-theme') || 'light');
+      initMermaid(currentTheme);
+      renderDiagrams();
     });
 
-    // Initialise Mermaid with theme settings
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: 'base',
-      themeVariables: {
-        primaryColor:    '#2563eb',
-        primaryTextColor: '#ffffff',
-        primaryBorderColor: '#1d4ed8',
-        lineColor:       '#64748b',
-        secondaryColor:  '#f1f5f9',
-        tertiaryColor:   '#e2e8f0',
-        fontFamily:      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-        fontSize:        '14px'
-      },
-      flowchart: { curve: 'basis' },
-      sequence: { actorMargin: 50 }
-    });
-  });
+  }());
 </script>
 {% endif %}

@@ -1,36 +1,99 @@
 // =============================================================================
-// Colour Palette
+// CSS Custom Properties — Light theme (default) and Dark theme overrides
+// All colour decisions live here. SCSS variables reference the custom props
+// so existing code compiles to var(--xxx) without changes elsewhere.
 // =============================================================================
-$color-bg:          #ffffff;
-$color-bg-subtle:   #f8fafc;
-$color-border:      #e2e8f0;
-$color-text:        #1e293b;
-$color-text-muted:  #64748b;
-$color-text-faint:  #94a3b8;
 
-// Category accent colours
-$color-iam:         #2563eb;   // Blue  — IAM
-$color-iam-bg:      #eff6ff;
-$color-birds:       #16a34a;   // Green — Birds
-$color-birds-bg:    #f0fdf4;
-$color-cities:      #ea580c;   // Orange — Cities
-$color-cities-bg:   #fff7ed;
+:root {
+  // Backgrounds
+  --color-bg:           #ffffff;
+  --color-bg-subtle:    #f8fafc;
+
+  // Borders
+  --color-border:       #e2e8f0;
+
+  // Text
+  --color-text:         #1e293b;
+  --color-text-muted:   #64748b;
+  --color-text-faint:   #94a3b8;
+
+  // IAM — Blue
+  --color-iam:              #2563eb;
+  --color-iam-hover:        #1d4ed8;   // -8% lightness
+  --color-iam-hover-strong: #1e40af;   // -12% lightness
+  --color-iam-bg:           #eff6ff;
+
+  // Birds — Green
+  --color-birds:        #16a34a;
+  --color-birds-bg:     #f0fdf4;
+
+  // Cities — Orange
+  --color-cities:       #ea580c;
+  --color-cities-bg:    #fff7ed;
+}
+
+[data-theme="dark"] {
+  // Backgrounds
+  --color-bg:           #0f172a;
+  --color-bg-subtle:    #1e293b;
+
+  // Borders
+  --color-border:       #334155;
+
+  // Text
+  --color-text:         #f1f5f9;
+  --color-text-muted:   #94a3b8;
+  --color-text-faint:   #64748b;
+
+  // IAM — lighter blue for dark backgrounds
+  --color-iam:              #60a5fa;
+  --color-iam-hover:        #93c5fd;
+  --color-iam-hover-strong: #bfdbfe;
+  --color-iam-bg:           #1e3a5f;
+
+  // Birds — lighter green
+  --color-birds:        #4ade80;
+  --color-birds-bg:     #052e16;
+
+  // Cities — lighter orange
+  --color-cities:       #fb923c;
+  --color-cities-bg:    #431407;
+}
 
 // =============================================================================
-// Typography
+// SCSS Variables — reference the CSS custom properties.
+// All existing partials use these without any changes needed.
+// =============================================================================
+$color-bg:               var(--color-bg);
+$color-bg-subtle:        var(--color-bg-subtle);
+$color-border:           var(--color-border);
+$color-text:             var(--color-text);
+$color-text-muted:       var(--color-text-muted);
+$color-text-faint:       var(--color-text-faint);
+$color-iam:              var(--color-iam);
+$color-iam-hover:        var(--color-iam-hover);
+$color-iam-hover-strong: var(--color-iam-hover-strong);
+$color-iam-bg:           var(--color-iam-bg);
+$color-birds:            var(--color-birds);
+$color-birds-bg:         var(--color-birds-bg);
+$color-cities:           var(--color-cities);
+$color-cities-bg:        var(--color-cities-bg);
+
+// =============================================================================
+// Typography — not theme-dependent, stay as plain SCSS variables
 // =============================================================================
 $font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $font-serif: Georgia, "Times New Roman", serif;
 $font-mono: "SF Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
 
-$text-base:   1rem;       // 16px
-$text-sm:     0.875rem;   // 14px
-$text-xs:     0.75rem;    // 12px
-$text-lg:     1.125rem;   // 18px
-$text-xl:     1.25rem;    // 20px
-$text-2xl:    1.5rem;     // 24px
-$text-3xl:    1.875rem;   // 30px
-$text-4xl:    2.25rem;    // 36px
+$text-base:   1rem;
+$text-sm:     0.875rem;
+$text-xs:     0.75rem;
+$text-lg:     1.125rem;
+$text-xl:     1.25rem;
+$text-2xl:    1.5rem;
+$text-3xl:    1.875rem;
+$text-4xl:    2.25rem;
 
 $line-height-body:    1.75;
 $line-height-heading: 1.25;
@@ -38,16 +101,16 @@ $line-height-heading: 1.25;
 // =============================================================================
 // Layout
 // =============================================================================
-$container-max:   800px;
-$container-wide:  1100px;
-$spacing-unit:    1rem;
+$container-max:  800px;
+$container-wide: 1100px;
+$spacing-unit:   1rem;
 
 // =============================================================================
 // Breakpoints
 // =============================================================================
-$bp-sm:  640px;
-$bp-md:  768px;
-$bp-lg:  1024px;
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
 
 // =============================================================================
 // Transitions

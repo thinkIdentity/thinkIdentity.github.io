@@ -1,5 +1,4 @@
 @use "variables" as *;
-@use "sass:color";
 
 // =============================================================================
 // Reset & Base
@@ -32,7 +31,7 @@ a {
   color: $color-iam;
   text-decoration: none;
   transition: color $transition-fast;
-  &:hover { color: color.adjust($color-iam, $lightness: -12%); text-decoration: underline; }
+  &:hover { color: $color-iam-hover-strong; text-decoration: underline; }
 }
 
 // =============================================================================
