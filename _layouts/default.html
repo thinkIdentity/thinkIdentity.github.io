@@ -1,6 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
+  <!--
+    Anti-FOUC (Flash of Unstyled Content) — must run synchronously before CSS.
+    Reads saved theme from localStorage (or OS preference) and sets data-theme
+    on <html> BEFORE the stylesheet is parsed, so the page renders in the
+    correct theme from the very first paint.
+  -->
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      var preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', saved || preferred);
+    }());
+  </script>
+
   {% include head.html %}
 </head>
 <body>
@@ -12,5 +26,8 @@
 
   {% include footer.html %}
   {% include mermaid-loader.html %}
+
+  <!-- Theme toggle + scroll behaviour -->
+  <script src="{{ '/assets/js/theme.js' | relative_url }}" defer></script>
 </body>
 </html>

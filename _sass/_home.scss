@@ -1,5 +1,4 @@
 @use "variables" as *;
-@use "sass:color";
 
 // =============================================================================
 // Home Page
@@ -70,7 +69,7 @@
     background: $color-iam;
     color: #fff;
     border-color: $color-iam;
-    &:hover { background: color.adjust($color-iam, $lightness: -8%); text-decoration: none; }
+    &:hover { background: $color-iam-hover; border-color: $color-iam-hover; text-decoration: none; }
   }
 
   &.secondary {

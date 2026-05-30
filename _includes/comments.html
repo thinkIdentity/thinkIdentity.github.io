@@ -44,14 +44,27 @@
             crossorigin="anonymous"
             async>
     </script>
-    <!-- data-theme is set to preferred_color_scheme (respects OS dark/light setting).
-         When the blog's dark/light toggle is implemented, replace with a JS call:
-           document.querySelector('iframe.giscus-frame')
-             .contentWindow.postMessage(
-               { giscus: { setConfig: { theme: isDark ? 'dark_dimmed' : 'light' } } },
-               'https://giscus.app'
-             );
-    -->
+    <!-- Giscus theme is synced by theme.js via postMessage when the toggle fires.
+         On first load, watchForGiscus() in theme.js waits for the iframe to appear
+         and then sends the correct theme (dark_dimmed or light). -->
+    <script>
+      // Set initial Giscus theme once the iframe finishes loading
+      window.addEventListener('message', function onGiscusReady(event) {
+        if (event.origin !== 'https://giscus.app') return;
+        if (event.data && event.data.giscus && event.data.giscus.discussion !== undefined) {
+          // Giscus iframe is ready — sync theme
+          var theme = document.documentElement.getAttribute('data-theme') || 'light';
+          var iframe = document.querySelector('iframe.giscus-frame');
+          if (iframe) {
+            iframe.contentWindow.postMessage(
+              { giscus: { setConfig: { theme: theme === 'dark' ? 'dark_dimmed' : 'light' } } },
+              'https://giscus.app'
+            );
+          }
+          window.removeEventListener('message', onGiscusReady);
+        }
+      });
+    </script>
 
     <noscript>
       <p class="comments-noscript">
