@@ -168,13 +168,36 @@ This map will be the foundation for future posts. Each of these technologies —
 
 If you are new to IAM, here is a suggested reading path for this series:
 
-1. ✅ **What is IAM and why it matters** *(you are here)*
-2. 🔜 **Authentication deep dive — Passwords, MFA, and Passkeys**
-3. 🔜 **OAuth 2.0 and OpenID Connect — The protocols behind "Sign in with Google"**
-4. 🔜 **SAML 2.0 — How enterprise SSO really works**
-5. 🔜 **Zero Trust — Why "trust but verify" is dead**
-6. 🔜 **Access Reviews — The operational heart of IAM governance**
+## Part 1: Foundations — What Is Identity and Why Does It Matter?
+1. ✅ [What is IAM and why it matters]({% post_url /2026/05/2026-05-01-what-is-iam-and-why-it-matters %})
+2. ✅ [Beyond the Employee — Every Type of Identity Your IAM Programme Must Manage]({% post_url /2026/05/2026-05-02-identity-types-and-privileged-access-management %})
+3. ✅ [Who Are Your Users? Identity Relationship Models — B2E, B2B, B2C, B2B2C, and Hyperscale]({% post_url /2026/05/2026-05-05-identity-relationship-models %})
+
+## Part 2: Authentication — How Do You Prove Who You Are?
+1. 🔜 Authentication Deep Dive — Passwords, MFA, and Passkeys
+2. 🔜 SAML 2.0 — How Enterprise Single Sign-On Really Works
+3. 🔜 OAuth 2.0 and OpenID Connect — The Protocols Behind "Sign in with Google or Apple"
+
+
+## Part 3: Governance — How Is Access Managed Over Time?
+1. 🔜 IGA Deep Dive — Provisioning, Role Engineering, and Segregation of Duties
+2. 🔜 Access Reviews — The Operational Heart of IAM Governancee
+3. 🔜 PAM Deep Dive — Vault Architecture, JIT in Production, and Session Recording
+
+## Part 4: Modern Security Architecture — The Guardrails
+1. 🔜 Zero Trust — Why "Trust but Verify" Is Dead
+2. 🔜 IAM Deployment Models — Cloud-Native, Hybrid, On-Premise: What Changes and What Stays the Same
+
+## Part 5: Non-Human Identity — The Bridge to the Agentic Era
+1. 🔜 Non-Human Identities — The Hidden Attack Surface (Service Accounts, API Keys, Certificates, OAuth Tokens at Scale)
+2. 🔜 Three Generations of IAM Tools — and Why None of Them Were Built for the Agentic Era
+
+## Part 6: The Agentic Era — IAM for AI Agents
+1. 🔜 The Legacy Backend Problem — LDAP, SQL, and Why Your IAM Foundation Is Holding Back Agentic Identity
+2. 🔜 Agentic Identity Protocols — OAuth 2.1, CIBA, OIDC-A, and the Delegation Chain Problem
+3. 🔜 Building Secure AI Agent Systems — A Practical Architecture Guide
+4. 🔜 NHI Governance at Scale — Discovery, Ownership, and Policy for the 90:1 World
 
 ---
 
-*Have a question or a topic you want covered? Once comments are enabled, leave a note below. Alternatively, the RSS feed will alert you when new posts are published.*
+*Have a question or a topic you want covered? leave a note below. Alternatively, the RSS feed will alert you when new posts are published.*
