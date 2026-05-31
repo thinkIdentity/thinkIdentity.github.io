@@ -171,7 +171,7 @@ If you are new to IAM, here is a suggested reading path for this series:
 ## Part 1: Foundations — What Is Identity and Why Does It Matter?
 1. ✅ [What is IAM and why it matters]({% post_url /2026/05/2026-05-01-what-is-iam-and-why-it-matters %})
 2. ✅ [Beyond the Employee — Every Type of Identity Your IAM Programme Must Manage]({% post_url /2026/05/2026-05-02-identity-types-and-privileged-access-management %})
-3. ✅ Who Are Your Users? Identity Relationship Models — B2E, B2B, B2C, B2B2C, and Hyperscale({% post_url /2026/05/2026-05-05-identity-relationship-models %})
+3. ✅ [Who Are Your Users? Identity Relationship Models — B2E, B2B, B2C, B2B2C, and Hyperscale]({% post_url /2026/05/2026-05-05-identity-relationship-models %})
 
 ## Part 2: Authentication — How Do You Prove Who You Are?
 1. 🔜 Authentication Deep Dive — Passwords, MFA, and Passkeys
