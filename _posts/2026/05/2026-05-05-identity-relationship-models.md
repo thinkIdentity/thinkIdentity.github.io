@@ -434,5 +434,3 @@ This is an **identity unification** challenge, not a separate relationship model
 ---
 
 *Part of the IAM from First Principles series.*
-*Previous: [Beyond the Employee — Every Type of Identity Your IAM Programme Must Manage](/posts/2026-05-02-identity-types-and-privileged-access-management)*
-*Next: Authentication Deep Dive — Passwords, MFA, and Passkeys*

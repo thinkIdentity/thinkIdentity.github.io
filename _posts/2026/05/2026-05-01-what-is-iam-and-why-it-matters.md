@@ -174,9 +174,9 @@ If you are new to IAM, here is a suggested reading path for this series:
 3. ✅ [Who Are Your Users? Identity Relationship Models — B2E, B2B, B2C, B2B2C, and Hyperscale]({% post_url /2026/05/2026-05-05-identity-relationship-models %})
 
 ## Part 2: Authentication — How Do You Prove Who You Are?
-1. 🔜 Authentication Deep Dive — Passwords, MFA, and Passkeys
-2. 🔜 SAML 2.0 — How Enterprise Single Sign-On Really Works
-3. 🔜 OAuth 2.0 and OpenID Connect — The Protocols Behind "Sign in with Google or Apple"
+1. ✅ [Authentication Deep Dive — Passwords, MFA, and Passkeys]({% post_url /2026/05/2026-05-08-authentication-deep-dive-passwords-mfa-passkeys %})
+2. ✅ [SAML 2.0 — How Enterprise Single Sign-On Really Works]({% post_url /2026/05/2026-05-11-saml-2-enterprise-sso-deep-dive %})
+3. ✅ [OAuth 2.0 and OpenID Connect — The Protocols Behind "Sign in with Google or Apple"]({% post_url /2026/05/2026-05-14-oauth2-openid-connect-protocols-explained %})
 
 
 ## Part 3: Governance — How Is Access Managed Over Time?
