@@ -442,4 +442,4 @@ Step 2 — eliminating shared accounts — is the highest-impact compliance fix 
 
 ---
 
-*Part of the IAM from First Principles series. Previous: [What Is IAM and Why Every Organisation Needs to Get It Right](/posts/2026-05-01-what-is-iam-and-why-it-matters)*
+*Part of the IAM from First Principles series.*s
