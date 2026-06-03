@@ -216,7 +216,7 @@ Campaigns are based on a point-in-time snapshot pulled at campaign launch. If ac
 
 ## The Entitlement Description Problem — Why Context Determines Quality
 
-A reviewer cannot make a meaningful decision without understanding what they are being asked to review. This is where many access review programmes fail before they begin.
+A reviewer cannot make a meaningful decision without understanding what they are being asked to review. This is where many access review program fail before they begin.
 
 Consider a manager reviewing their team's access. They see:
 
@@ -344,7 +344,7 @@ flowchart LR
 
 ## How Access Reviews Connect Back to IGA Automation
 
-Access reviews and IGA automation are not separate programmes — they are two phases of the same governance cycle. IGA provisions access based on policy; access reviews validate that the policy-derived access remains appropriate; review outcomes feed back into IGA as policy corrections.
+Access reviews and IGA automation are not separate program — they are two phases of the same governance cycle. IGA provisions access based on policy; access reviews validate that the policy-derived access remains appropriate; review outcomes feed back into IGA as policy corrections.
 
 ```mermaid
 flowchart LR
@@ -384,7 +384,7 @@ This is the difference between an access review programme that reduces risk over
 
 - **Rubber stamping is the most common way access reviews fail.** It is detectable (velocity analytics, approve rate anomalies) and preventable (usage data, risk-based scoping, inactivity auto-revocation, accountability sampling).
 
-- **Access reviews and IGA automation form a feedback loop.** Reviews surface policy errors; IGA corrects them. Programmes that treat the two as independent miss the compounding governance benefit of connecting them.
+- **Access reviews and IGA automation form a feedback loop.** Reviews surface policy errors; IGA corrects them. program that treat the two as independent miss the compounding governance benefit of connecting them.
 
 ---
 
