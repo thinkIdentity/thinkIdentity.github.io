@@ -180,9 +180,9 @@ If you are new to IAM, here is a suggested reading path for this series:
 
 
 ## Part 3: Governance — How Is Access Managed Over Time?
-1. 🔜 IGA Deep Dive — Provisioning, Role Engineering, and Segregation of Duties
-2. 🔜 Access Reviews — The Operational Heart of IAM Governancee
-3. 🔜 PAM Deep Dive — Vault Architecture, JIT in Production, and Session Recording
+1. ✅ [IGA Deep Dive — Provisioning, Role Engineering, and Segregation of Duties ]({% post_url /2026/05/2026-05-17-iga-deep-dive-provisioning-role-engineering-sod %})
+2. ✅ [Access Reviews — The Operational Heart of IAM Governancee. ]({% post_url /2026/05/2026-05-19-access-reviews-operational-heart-iam-governance %})
+3. 🔜 PAM Deep Dive — Vault Architecture, JIT in Production, and Session Recording 
 
 ## Part 4: Modern Security Architecture — The Guardrails
 1. 🔜 Zero Trust — Why "Trust but Verify" Is Dead
