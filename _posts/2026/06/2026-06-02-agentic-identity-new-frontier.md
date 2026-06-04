@@ -54,7 +54,7 @@ Today, AI agents are already running inside Salesforce, ServiceNow, Microsoft 36
 
 Before examining the governance challenge, the definition must be precise. The term "AI agent" covers everything from a simple chatbot to a fully autonomous supply chain optimiser. From an identity perspective, what matters is a specific property:
 
-> An AI agent is an identified and authorised software entity that takes **autonomous actions** based on **decisions made at inference time** to achieve a specified goal — **interacting with external services**, APIs, tools, or other agents in the process.
+> An AI agent is an identified and authorized software entity that takes **autonomous actions** based on **decisions made at inference time** to achieve a specified goal — **interacting with external services**, APIs, tools, or other agents in the process.
 
 This definition comes from the [OpenID Foundation's 2025 whitepaper on Identity Management for Agentic AI](https://openid.net/wp-content/uploads/2025/10/Identity-Management-for-Agentic-AI.pdf){:target="_blank"}, the most authoritative analysis of where current identity standards succeed and fail for this new class of entity.
 
@@ -169,10 +169,10 @@ The governance challenge looks different depending on where you sit in the organ
 |-------------|---------------------|---------------|
 | **Regulatory / Compliance** | EU AI Act oversight; GDPR Art. 22 automated decisions; financial services audit trails | No IAM standard covers agent-specific accountability; most audit logs cannot distinguish agent actions from user actions |
 | **Executive / CISO** | Blast radius if an agent is compromised; cost of uncontrolled agent sprawl | [92% of enterprises](https://www.resilientcyber.io/p/identity-is-the-agentic-ai-problem){:target="_blank"} report legacy IAM cannot effectively manage AI and NHI risks |
-| **Auditor** | Who authorised this agent? What did it access? When was it last reviewed? | Agent actions appear in logs as user actions — the delegation chain is invisible |
+| **Auditor** | Who authorized this agent? What did it access? When was it last reviewed? | Agent actions appear in logs as user actions — the delegation chain is invisible |
 | **Implementor / IGA Team** | How to provision, govern, and decommission agents at scale | No production SCIM schema exists for agents; the [IETF draft-wahl-scim-agent-schema](https://datatracker.ietf.org/doc/draft-wahl-scim-agent-schema/){:target="_blank"} is still in progress |
 | **Administrator / Platform Team** | How to detect anomalous behaviour in a non-deterministic system | NHI anomaly detection works on stable baselines; agent behaviour shifts with every prompt |
-| **User** | What did I actually authorise? Where is my data going? | Consent is granted once at agent setup; scope is vague; ongoing actions accumulate without further approval |
+| **User** | What did I actually authorize? Where is my data going? | Consent is granted once at agent setup; scope is vague; ongoing actions accumulate without further approval |
 | **Developer** | How to build agents that authenticate securely across systems | [OAuth 2.1](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-13){:target="_blank"} + [MCP](https://modelcontextprotocol.io/){:target="_blank"} works within a single trust domain; cross-organisational delegation is unsolved |
 
 The critical observation: [78% of enterprises have no formally documented policies](https://www.resilientcyber.io/p/identity-is-the-agentic-ai-problem){:target="_blank"} for creating or removing AI agent identities. Agents are being deployed; the governance frameworks are not keeping pace.
@@ -284,7 +284,7 @@ Traditional [OAuth 2.0 consent]({% post_url /2026/05/2026-05-14-oauth2-openid-co
 When the "app" is an AI agent that makes autonomous trading decisions, the OAuth consent model breaks down:
 
 - The customer consented to "read portfolio data and place trades" — but not to any specific trade
-- The agent will exercise judgement about *which* trades to place and *when* — judgement the customer did not explicitly authorise
+- The agent will exercise judgement about *which* trades to place and *when* — judgement the customer did not explicitly authorize
 - If the agent makes a poor decision, the customer's consent to "place trades" does not capture the specific action that caused the loss
 
 This is not a hypothetical edge case. It is the defining characteristic of every consumer-facing AI agent that takes consequential autonomous actions: **the consent was granted for a capability, not for a specific decision**. Governing that gap is one of the most critical unsolved problems in agentic identity.
@@ -358,7 +358,7 @@ NHI anomaly detection works because service accounts have stable, predictable be
 Service account orphaning is a known problem (covered in the [NHI post]({% post_url /2026/05/2026-05-27-non-human-identities-hidden-attack-surface %}){:target="_blank"}). An AI agent that has spawned sub-agents, acquired OAuth consents from multiple users, and integrated with a dozen systems is far harder to orphan gracefully.
 
 **4. How do you decommission an agent that has delegated?**
-Revoking the primary agent's credentials does not automatically revoke the credentials of sub-agents it has already spawned and authorised. The [OpenID Foundation whitepaper](https://openid.net/wp-content/uploads/2025/10/Identity-Management-for-Agentic-AI.pdf){:target="_blank"} identifies this as one of the critical unsolved problems — propagating revocation down a delegation chain of offline-attenuated tokens.
+Revoking the primary agent's credentials does not automatically revoke the credentials of sub-agents it has already spawned and authorized. The [OpenID Foundation whitepaper](https://openid.net/wp-content/uploads/2025/10/Identity-Management-for-Agentic-AI.pdf){:target="_blank"} identifies this as one of the critical unsolved problems — propagating revocation down a delegation chain of offline-attenuated tokens.
 
 **5. What exactly did the user consent to?**
 A user who clicked "Allow" when launching a Copilot agent consented to something — but the scope of that consent may cover actions the user never anticipated. As [consent fatigue](https://openid.net/wp-content/uploads/2025/10/Identity-Management-for-Agentic-AI.pdf){:target="_blank"} grows with agent proliferation, users reflexively approve prompts without due consideration, reducing consent to a formality.

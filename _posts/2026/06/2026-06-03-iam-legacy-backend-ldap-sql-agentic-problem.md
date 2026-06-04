@@ -305,7 +305,7 @@ Agent credentials should be **short-lived tokens with embedded constraints**, no
 The options:
 - **JWT (JSON Web Token)** with short TTL — the current standard; widely supported
 - **SPIFFE SVIDs** — cryptographically verifiable workload identity; suitable for infrastructure-level agent identity
-- **Biscuits / Macaroons** — enable offline scope attenuation; allow an agent to generate a more restricted sub-token for its sub-agents without a round-trip to the authorisation server
+- **Biscuits / Macaroons** — enable offline scope attenuation; allow an agent to generate a more restricted sub-token for its sub-agents without a round-trip to the authorization server
 
 This last point directly addresses the OpenID Foundation's identified gap around recursive delegation — **scope attenuation** where permissions provably narrow at each delegation hop.
 

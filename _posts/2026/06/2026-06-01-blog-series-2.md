@@ -25,11 +25,15 @@ This series addresses that directly.
 2. ✅ [Three Generations of IAM Tools — and Why None of Them Were Built for the Agentic Era]({% post_url /2026/06/2026-06-02-iam-vendor-generations-agentic-identity %}){:target="_blank"}
 3. ✅ [The Legacy Backend Problem — LDAP, SQL, and Why Your IAM Foundation Is Holding Back Agentic Identity]({% post_url /2026/06/2026-06-03-iam-legacy-backend-ldap-sql-agentic-problem %}){:target="_blank"}
 
-## Part 2: The Agentic Era — IAM for AI Agents
+## Part 2: Consumer Agents — Governance Beyond the Enterprise
 
-4. 🔜 Agentic Identity Protocols — OAuth 2.1, CIBA, OIDC-A, and the Delegation Chain Problem
-5. 🔜 Building Secure AI Agent Systems — A Practical Architecture Guide
-6. 🔜 NHI Governance at Scale — Discovery, Ownership, and Policy for the 90:1 World
+4. ✅ [Consumer Agents and the Consent Problem — When AI Acts on Behalf of Your Customers]({% post_url /2026/06/2026-06-04-consumer-agents-consent-problem %}){:target="_blank"}
+
+## Part 3: The Agentic Era — IAM for AI Agents
+
+5. 🔜 Agentic Identity Protocols — OAuth 2.1, CIBA, OIDC-A, and the Delegation Chain Problem
+6. 🔜 Building Secure AI Agent Systems — A Practical Architecture Guide
+7. 🔜 NHI Governance at Scale — Discovery, Ownership, and Policy for the 90:1 World
 
 ---
 

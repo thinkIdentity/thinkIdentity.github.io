@@ -231,7 +231,7 @@ Now consider the same item with a proper entitlement description:
 
 > **Entitlement:** `GRP-FIN-0023 — Accounts Payable Approver`
 > **Application:** SAP ECC (Finance Module)
-> **Risk Level:** High — allows payment approvals up to ₹50 lakh without secondary authorisation
+> **Risk Level:** High — allows payment approvals up to ₹50 lakh without secondary authorization
 > **Last Used:** 14 months ago
 > **SoD Note:** Conflicts with Vendor Master Maintenance role (create + approve = SoD violation)
 > **Action:** Certify / Revoke

@@ -90,7 +90,7 @@ In OAuth 2.0 + OIDC flows, you typically receive three tokens:
 
 | Token | Purpose | Lifetime | Sent to |
 |-------|---------|---------|--------|
-| **Access Token** | Proves the holder is authorised to call an API | Short — 5 to 60 minutes | Resource servers / APIs |
+| **Access Token** | Proves the holder is authorized to call an API | Short — 5 to 60 minutes | Resource servers / APIs |
 | **Refresh Token** | Used to get a new access token without re-authenticating | Long — hours to days | Only to the token endpoint |
 | **ID Token** | Contains claims about *who the user is* (name, email, sub) | Short — consumed once | The client application only |
 
@@ -173,9 +173,9 @@ flowchart TD
     Med --> Token
     High --> Token
 
-    Token --> TransactionSign[Step 3: Transaction<br/>Signing Challenge<br/>'Authorise transfer of<br/>₹50L to ACCT-XXXX?<br/>Approve in app']
+    Token --> TransactionSign[Step 3: Transaction<br/>Signing Challenge<br/>'authorize transfer of<br/>₹50L to ACCT-XXXX?<br/>Approve in app']
     TransactionSign --> Audit[Step 4: Audit log<br/>IP, device, MFA chain,<br/>amount, payee — all recorded]
-    Audit --> Done([Transfer authorised])
+    Audit --> Done([Transfer authorized])
 
     style Start fill:#1e3a5f,stroke:#3b82f6,color:#fff
     style High fill:#7f1d1d,stroke:#ef4444,color:#fff
@@ -183,7 +183,7 @@ flowchart TD
     style Token fill:#1e3a5f,stroke:#3b82f6,color:#fff
 ```
 
-The key pattern in the complex journey: **step-up authentication** — the level of assurance required increases with the risk of the action being authorised. Simply being logged in is not enough to authorise a high-value transaction.
+The key pattern in the complex journey: **step-up authentication** — the level of assurance required increases with the risk of the action being authorized. Simply being logged in is not enough to authorize a high-value transaction.
 
 ---
 

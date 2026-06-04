@@ -98,7 +98,7 @@ The numbers amplify the problem. According to [CyberArk's 2023 Identity Security
 The consequence of the castle-and-moat model is not just a theoretical risk. It is the documented mechanism behind three of the most significant security incidents of the last decade.
 
 **SolarWinds, 2020 — Inside the Moat for Nine Months**
-[CISA's advisory](https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-352a){:target="_blank"} on the SolarWinds supply chain compromise documents how attackers (APT29/Cozy Bear) entered via a tampered software update. Once inside the networks of affected organisations — including US federal agencies — they moved laterally for months. The network treated the attacker's tools as trusted internal traffic. No re-verification was required to access high-value systems. A Zero Trust model, requiring explicit authorisation for each resource access, would not have prevented the initial entry but would have severely constrained the lateral movement.
+[CISA's advisory](https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-352a){:target="_blank"} on the SolarWinds supply chain compromise documents how attackers (APT29/Cozy Bear) entered via a tampered software update. Once inside the networks of affected organisations — including US federal agencies — they moved laterally for months. The network treated the attacker's tools as trusted internal traffic. No re-verification was required to access high-value systems. A Zero Trust model, requiring explicit authorization for each resource access, would not have prevented the initial entry but would have severely constrained the lateral movement.
 
 **Colonial Pipeline, 2021 — One VPN Password, No MFA**
 [CISA's advisory](https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-131a){:target="_blank"} confirms that attackers used a single compromised VPN password — with no multi-factor authentication on the account — to gain access. The VPN credential was sufficient. The network granted full internal access. A Zero Trust model with mandatory MFA and device health verification on VPN authentication would have blocked the initial entry.
@@ -119,7 +119,7 @@ The pattern across all three: an entity gained a foothold via a trusted path, an
 3. **Access to individual enterprise resources is granted on a per-session basis** — previous authentication to one resource does not grant trust for another.
 4. **Access to resources is determined by dynamic policy** — the decision considers identity, device health, behaviour, time, and context — not just username and password.
 5. **The enterprise monitors and measures the integrity and security posture of all owned and associated assets** — continuous monitoring, not one-time verification.
-6. **All resource authentication and authorisation are dynamic and strictly enforced before access is allowed** — access is evaluated at request time, every time.
+6. **All resource authentication and authorization are dynamic and strictly enforced before access is allowed** — access is evaluated at request time, every time.
 7. **The enterprise collects as much information as possible about the current state of assets** and uses it to improve its security posture — telemetry drives the policy engine.
 
 The practical summary of these seven tenets is three words: **never trust, always verify.**
@@ -137,7 +137,7 @@ flowchart LR
     ID["🪪 Identity<br/>Who is making the request?<br/>MFA, continuous auth,<br/>behavioural analytics"]
     DV["💻 Device<br/>Is the device healthy and managed?<br/>Endpoint posture, MDM compliance,<br/>certificate-based auth"]
     NW["🌐 Network<br/>Is the path to the resource secure?<br/>Microsegmentation, encrypted traffic,<br/>ZTNA replacing VPN"]
-    AP["📦 Application / Workload<br/>Is access to this application<br/>authorised for this identity<br/>from this device at this time?"]
+    AP["📦 Application / Workload<br/>Is access to this application<br/>authorized for this identity<br/>from this device at this time?"]
     DA["🗄️ Data<br/>Is access to this specific data<br/>justified by role and context?<br/>DLP, classification, rights management"]
 
     ZT --> ID
@@ -410,7 +410,7 @@ Most large enterprises are at the **Initial** stage across most pillars. Reachin
 
 - **The perimeter is gone.** Mobile devices, home networks, cloud services, third-party vendors, IoT, and AI agents have dissolved the boundary that castle-and-moat security was designed to protect. The model is structurally obsolete.
 
-- **Lateral movement is the documented consequence.** SolarWinds, Colonial Pipeline, and Target all demonstrate the same failure: an attacker crossed the perimeter once and moved freely afterwards. Zero Trust addresses lateral movement by requiring explicit authorisation for every resource, every time.
+- **Lateral movement is the documented consequence.** SolarWinds, Colonial Pipeline, and Target all demonstrate the same failure: an attacker crossed the perimeter once and moved freely afterwards. Zero Trust addresses lateral movement by requiring explicit authorization for every resource, every time.
 
 - **Zero Trust means never trust, always verify — for every identity, every device, every request, every session.** The NIST SP 800-207 definition makes clear: this is not about distrust. It is about continuous verification based on all available signals.
 

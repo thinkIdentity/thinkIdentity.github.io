@@ -185,7 +185,7 @@ sequenceDiagram
 
 ## OpenID Connect — The Identity Layer OAuth Was Missing
 
-OAuth 2.0 is an **authorisation** framework — it answers "what can this client do?" It does not answer "who is the user?" That gap led to each AS inventing its own `/userinfo` endpoint with its own format.
+OAuth 2.0 is an **authorization** framework — it answers "what can this client do?" It does not answer "who is the user?" That gap led to each AS inventing its own `/userinfo` endpoint with its own format.
 
 [OpenID Connect (OIDC)](https://openid.net/specs/openid-connect-core-1_0.html){:target="_blank"} standardises the identity layer on top of OAuth 2.0. It adds:
 - The **ID Token** — a JWT containing standard identity claims
@@ -193,7 +193,7 @@ OAuth 2.0 is an **authorisation** framework — it answers "what can this client
 - Standard **scopes** (`openid`, `profile`, `email`, `address`, `phone`) that map to standard claims
 - **Discovery endpoint** — for auto-configuration
 
-OIDC is requested by including `openid` in the scope. If `openid` is absent, it is a pure OAuth flow (authorisation only). If present, OIDC layer activates and the ID Token is issued.
+OIDC is requested by including `openid` in the scope. If `openid` is absent, it is a pure OAuth flow (authorization only). If present, OIDC layer activates and the ID Token is issued.
 
 ```mermaid
 flowchart TD
@@ -396,7 +396,7 @@ Out-of-the-box, an access token carries standard claims. In practice, APIs need 
 }
 ```
 
-The trading platform's API reads `trader_tier` and `risk_limit_usd` directly from the token — no database lookup needed for authorisation decisions.
+The trading platform's API reads `trader_tier` and `risk_limit_usd` directly from the token — no database lookup needed for authorization decisions.
 
 ---
 
@@ -494,7 +494,7 @@ mindmap
 
 ## Key Takeaways
 
-- **OAuth 2.0 is an authorisation framework, not an authentication protocol.** It delegates access — "this app may read my calendar" — but does not define who the user is. OIDC adds that identity layer.
+- **OAuth 2.0 is an authorization framework, not an authentication protocol.** It delegates access — "this app may read my calendar" — but does not define who the user is. OIDC adds that identity layer.
 
 - **There are four active grant types:** Authorization Code (+ PKCE) for user-present flows; Client Credentials for M2M; Device Authorization for input-constrained devices; Refresh Token for silent renewal. Implicit and ROPC are deprecated in OAuth 2.1.
 
@@ -506,7 +506,7 @@ mindmap
 
 - **The `.well-known/openid-configuration` endpoint** is the single source of truth for all AS endpoints and capabilities. Client libraries should always use discovery rather than hardcoded URLs.
 
-- **Custom claims** let you embed authorisation context (role, tier, risk limit) directly in the token — enabling stateless, database-free authorisation at the Resource Server.
+- **Custom claims** let you embed authorization context (role, tier, risk limit) directly in the token — enabling stateless, database-free authorization at the Resource Server.
 
 - **Token exchange (RFC 8693)** enables controlled delegation across service chains. Macaroons/Biscuits enable offline scope attenuation for agentic and distributed systems.
 
