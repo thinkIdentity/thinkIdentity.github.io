@@ -442,4 +442,4 @@ Step 2 — eliminating shared accounts — is the highest-impact compliance fix 
 
 ---
 
-*Part of the IAM from First Principles series.*
+[*Part of the IAM from First Principles series.*]({% post_url /2026/05/2026-05-01-blog-series-1 %}){:target="_blank"}

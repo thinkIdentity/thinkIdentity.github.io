@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "IAM from First Principles series"
+title: "IAM from First Principles - Series 1"
 date: 2026-05-01
 category: iam
 categories: [iam]
@@ -30,18 +30,19 @@ Whether you are new to the field or an architect preparing for agentic delegatio
 
 ## Part 4: Modern Security Architecture — The Guardrails
 1. ✅ [IAM Deployment Models — Cloud-Native, Hybrid, On-Premises: What Changes and What Stays the Same]({% post_url /2026/05/2026-05-23-iam-deployment-models-cloud-hybrid-on-premise %}){:target="_blank"}
-2. ✅ [Zero Trust — Why "Trust but Verify" Is Dead.   ]({% post_url /2026/05/2026-05-25-zero-trust-why-trust-but-verify-is-dead %}){:target="_blank"}
+2. ✅ [Zero Trust — Why "Trust but Verify" Is Dead.]({% post_url /2026/05/2026-05-25-zero-trust-why-trust-but-verify-is-dead %}){:target="_blank"}
 
 ## Part 5: Non-Human Identity — The Bridge to the Agentic Era
-1. 🔜 Non-Human Identities — The Hidden Attack Surface (Service Accounts, API Keys, Certificates, OAuth Tokens at Scale)
-2. 🔜 Three Generations of IAM Tools — and Why None of Them Were Built for the Agentic Era
-
-## Part 6: The Agentic Era — IAM for AI Agents
-1. 🔜 The Legacy Backend Problem — LDAP, SQL, and Why Your IAM Foundation Is Holding Back Agentic Identity
-2. 🔜 Agentic Identity Protocols — OAuth 2.1, CIBA, OIDC-A, and the Delegation Chain Problem
-3. 🔜 Building Secure AI Agent Systems — A Practical Architecture Guide
-4. 🔜 NHI Governance at Scale — Discovery, Ownership, and Policy for the 90:1 World
+1. ✅ [Non-Human Identities — The Hidden Attack Surface (Service Accounts, API Keys, Certificates, OAuth Tokens at Scale)]({% post_url /2026/05/2026-05-27-non-human-identities-hidden-attack-surface %}){:target="_blank"}
 
 ---
 
-*Have a question or a topic you want covered? leave a note below. Alternatively, the RSS feed will alert you when new posts are published.*
+## What Comes Next
+
+Non-human identities at 90:1 scale are a governance challenge this series has fully mapped. But AI agents are something qualitatively different — autonomous actors that request permissions at runtime, delegate authority to sub-agents, and operate across trust boundaries that no standard in this series was designed to span.
+
+That problem gets its own series: **[IAM for the Agentic Era →]({% post_url /2026/06/2026-06-01-blog-series-2 %}){:target="_blank"}**
+
+---
+
+*Have a question or a topic you want covered? Leave a note below. The RSS feed will alert you when new posts are published.*

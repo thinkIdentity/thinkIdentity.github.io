@@ -409,4 +409,4 @@ When integration is straightforward, the developer's default choice becomes the 
 
 ---
 
-*Part of the IAM from First Principles series.*
+[*Part of the IAM from First Principles series.*]({% post_url /2026/05/2026-05-01-blog-series-1 %}){:target="_blank"}

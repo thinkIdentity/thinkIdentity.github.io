@@ -493,4 +493,4 @@ SAML trust depends on X.509 certificates. When an IdP certificate expires and th
 
 ---
 
-*Part of the IAM from First Principles series.*
+[*Part of the IAM from First Principles series.*]({% post_url /2026/05/2026-05-01-blog-series-1 %}){:target="_blank"}

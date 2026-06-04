@@ -164,4 +164,4 @@ This map will be the foundation for future posts. Each of these technologies —
 
 ---
 
-*Part of the IAM from First Principles series.*
+[*Part of the IAM from First Principles series.*]({% post_url /2026/05/2026-05-01-blog-series-1 %}){:target="_blank"}
