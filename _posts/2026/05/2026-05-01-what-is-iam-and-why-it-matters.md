@@ -37,7 +37,7 @@ Without a disciplined approach to IAM, you end up with what security teams call 
 flowchart TD
     A[Who are you?] -->|Authentication| B[You are Dr. Priya Mehta]
     B --> C[What can you access?]
-    C -->|Authorisation| D[Ward 3 patient records — Read/Write]
+    C -->|authorization| D[Ward 3 patient records — Read/Write]
     D --> E[What did you do?]
     E -->|Audit| F[Log: Accessed patient #4821 at 14:32]
 
@@ -60,9 +60,9 @@ Modern authentication uses **multiple factors**:
 
 Multi-Factor Authentication (MFA) is the single most impactful IAM control you can implement. Microsoft's research consistently shows MFA prevents over 99% of automated credential-stuffing attacks.
 
-### 2. Authorisation — "What Can You Access?"
+### 2. authorization — "What Can You Access?"
 
-Once a user is authenticated, authorisation determines what they are allowed to do. This is where most of the complexity in IAM lives.
+Once a user is authenticated, authorization determines what they are allowed to do. This is where most of the complexity in IAM lives.
 
 The two most common models:
 

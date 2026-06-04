@@ -448,7 +448,7 @@ A healthy IGA implementation maintains a **role hierarchy**: Business Roles (wha
 
 [Segregation of Duties (SoD)](https://en.wikipedia.org/wiki/Separation_of_duties){:target="_blank"} is the principle that no single person should be able to execute a transaction from start to finish without independent verification. It is the access-level implementation of the four-eyes principle.
 
-**Simple example:** The person who creates a vendor record should not also be the person who approves payments to that vendor. If one person can do both, they could create a fictitious vendor and authorise payments to themselves.
+**Simple example:** The person who creates a vendor record should not also be the person who approves payments to that vendor. If one person can do both, they could create a fictitious vendor and authorize payments to themselves.
 
 **Complex real-world scenario (Financial Institution):**
 
@@ -458,7 +458,7 @@ flowchart TD
     Create["Step 1: Create Trade<br/>Role: Trade Creator"]
     Amend["Step 2: Amend Trade<br/>Role: Trade Amender"]
     Confirm["Step 3: Confirm Trade<br/>Role: Trade Confirmer"]
-    Settle["Step 4: Release Settlement<br/>Role: Settlement Authoriser"]
+    Settle["Step 4: Release Settlement<br/>Role: Settlement authorizer"]
 
     Transaction --> Create --> Amend --> Confirm --> Settle
 

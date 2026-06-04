@@ -177,7 +177,7 @@ flowchart LR
         direction TB
         M1["mTLS certificate authentication<br/>Application presents a client certificate<br/>No passwords — certificates are the identity"]
         M2["IP / hostname allowlisting<br/>Only registered servers<br/>can query the vault API"]
-        M3["Scope restriction<br/>Application can fetch only<br/>the secrets it is authorised for"]
+        M3["Scope restriction<br/>Application can fetch only<br/>the secrets it is authorized for"]
         M4["Access logged per request<br/>Every secret fetch is an audit event"]
     end
 
@@ -302,7 +302,7 @@ flowchart TD
     style Mitigate fill:#1e4620,stroke:#22c55e,color:#fff
 ```
 
-**The lesson from this scenario:** PAM controls the operations it was configured to control. Copy, export, and cloning operations are not always blocked by default — they may be available as administrative features that bypass the controls on the original object. Process discipline — restricting these operations, logging them, alerting on them, and training approvers on what they are authorising — is the only control that closes this gap. Technology cannot compensate for an approver who does not understand what they are approving.
+**The lesson from this scenario:** PAM controls the operations it was configured to control. Copy, export, and cloning operations are not always blocked by default — they may be available as administrative features that bypass the controls on the original object. Process discipline — restricting these operations, logging them, alerting on them, and training approvers on what they are authorizing — is the only control that closes this gap. Technology cannot compensate for an approver who does not understand what they are approving.
 
 Process compliance in PAM is as important as technical configuration. Every approval workflow, every exception granted, every copy or export operation is a potential gap. PAM audits should include a review of approval decisions — not just whether the workflow was followed, but whether the approvals made sense.
 

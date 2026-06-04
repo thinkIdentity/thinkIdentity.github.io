@@ -13,7 +13,7 @@ Most enterprise IAM tools were designed around one central assumption: the Ident
 
 A person joins an organisation. That person is assigned roles. A manager approves access. The person leaves, and access is revoked. This is the lifecycle every major [IGA and Access Management platform]({% post_url /2026/05/2026-05-01-what-is-iam-and-why-it-matters %}){:target="_blank"} was built to automate.
 
-Artificial intelligence agents do not fit this model at all.
+[Artificial intelligence agents]({% post_url /2026/06/2026-06-02-agentic-identity-new-frontier %}){:target="_blank"} do not fit this model at all.
 
 This post maps the three generations of IAM tooling — covering both Identity Governance and Administration (IGA) and Access Management (AM) — and then examines the one challenge that is forcing every vendor, new and old, to rethink their architecture: **Agentic Identity Management**.
 
@@ -21,9 +21,9 @@ This post maps the three generations of IAM tooling — covering both Identity G
 
 ## Domains of Enterprise IAM
 
-Before we look at generations, it is worth being precise about the pillars of the Enterprise IAM landscape:
+Before we look at generations, it is worth being precise about the pillars of the [IAM landscape]({% post_url /2026/05/2026-05-01-what-is-iam-and-why-it-matters %}){:target="_blank"}:
 ```mermaid
-flowchart TD
+flowchart LR
     IAM[Enterprise IAM]
     IAM --> Core[Core Identity Engine]
     IAM --> Spec[Specialized Capabilities]
@@ -41,16 +41,16 @@ flowchart TD
     class AM danger
     class PAM,NHI,Sec info
 ```
-> PAM is highly specific. It targets less than 5% of users (admins/infrastructure).
+> [PAM]({% post_url /2026/05/2026-05-21-pam-deep-dive-vault-architecture-jit-session-recording %}){:target="_blank"} is highly specific. It targets less than 5% of users (admins/infrastructure).
 
-> NHI is a separate layer. It deals with software components, not human identities.
+> [NHI]({% post_url /2026/05/2026-05-27-non-human-identities-hidden-attack-surface %}){:target="_blank"} is a separate layer. It deals with software components, not human identities.
 
 > ITDR (Identity Threat Detection and Response) is rapidly shifting from a niche use case to a core requirement.
 
 For this current topic we will focous on the core engine of IAM — the heavy infrastructure that applies to every employee, contractor, and basic resource—IGA and AM are indeed the two main pillars.
 
 ```mermaid
-flowchart TD
+flowchart LR
     IAM[Enterprise IAM]
     IAM --> IGA[Identity Governance\nand Administration - IGA]
     IAM --> AM[Access Management - AM]
@@ -200,7 +200,7 @@ The answer requires a graph, not a table.
 | Ping Identity | PingOne / PingFederate / PingAccess | Merged with ForgeRock; enterprise CIAM + workforce AM |
 | Okta | Okta Workforce Identity / Customer Identity Cloud (Auth0) | Cloud-native; largest integration network |
 | Microsoft | Azure AD → Entra ID | Dominant by installed base; strong M365 ecosystem |
-| WSO2 | WSO2 Identity Server / Asgardeo | Open-source roots; strong enterprise and CIAM; active agentic identity roadmap — native MCP authorisation and agent first-class identity support |
+| WSO2 | WSO2 Identity Server / Asgardeo | Open-source roots; strong enterprise and CIAM; active agentic identity roadmap — native MCP authorization and agent first-class identity support |
 | Red Hat / Community | Keycloak | Dominant open-source choice; strong OAuth 2.1 / OIDC implementation; MCP server support added in 26.x; widely deployed behind enterprise API gateways |
 
 **Architecture:** SAML 2.0, OAuth 2.0, OpenID Connect (OIDC) as native protocols. Cloud delivery (multi-tenant SaaS) as the default. Adaptive MFA as a first-class feature. The Ping–ForgeRock merger in 2023 created a formidable Gen2 player with combined enterprise breadth and open-source flexibility.
@@ -214,9 +214,9 @@ These two deserve special mention because they represent the largest deployment 
 Neither is a Gen3 platform in the architectural sense — both still rely on relational database backends (H2/PostgreSQL for Keycloak, RDBMS for WSO2) and LDAP-compatible directory schemas. However, both are actively extending toward agentic identity:
 
 - **Keycloak 26.x** introduced MCP server support and has an mcp-keycloak project for agentic application management. It supports OAuth 2.1 client credentials for machine-to-machine flows — the current baseline for agent authentication.
-- **WSO2 Identity Server** released dedicated agentic AI capabilities in late 2025: agents as first-class identities, native MCP server authorisation, and a pre-configured application template for AI agent frameworks (LangChain, AutoGPT). WSO2 Asgardeo (its cloud-native SaaS offering) extends these capabilities to CIAM scenarios.
+- **WSO2 Identity Server** released dedicated agentic AI capabilities in late 2025: agents as first-class identities, native MCP server authorization, and a pre-configured application template for AI agent frameworks (LangChain, AutoGPT). WSO2 Asgardeo (its cloud-native SaaS offering) extends these capabilities to CIAM scenarios.
 
-The important caveat: these enhancements are protocol-level additions on top of unchanged directory/RDBMS backends. The MCP authorisation flows work; the underlying data model for representing agent identity, delegation chains, and ephemeral credentials remains constrained by the same legacy backend architecture that limits Gen1 and Gen2 tools generally. See *[The Legacy Backend Problem — LDAP, SQL, and Why Your IAM Foundation Is Holding Back Agentic Identity]({% post_url /2026/06/2026-06-03-iam-legacy-backend-ldap-sql-agentic-problem %})* for the full architectural analysis.
+The important caveat: these enhancements are protocol-level additions on top of unchanged directory/RDBMS backends. The MCP authorization flows work; the underlying data model for representing agent identity, delegation chains, and ephemeral credentials remains constrained by the same legacy backend architecture that limits Gen1 and Gen2 tools generally. See *[The Legacy Backend Problem — LDAP, SQL, and Why Your IAM Foundation Is Holding Back Agentic Identity]({% post_url /2026/06/2026-06-03-iam-legacy-backend-ldap-sql-agentic-problem %})* for the full architectural analysis.
 
 ---
 
@@ -424,7 +424,7 @@ flowchart LR
 
 - **Scope Attenuation in Recursive Delegation:** When Agent A delegates to Agent B, which delegates to Agent C, standard OAuth cannot enforce that permissions only *narrow* at each hop. Emerging token formats — **Biscuits** and **Macaroons** — support offline attenuation (restricting a token without contacting the issuer), but are not yet mainstream IAM toolkit items.
 
-- **Asynchronous Authorization (CIBA):** An agent running a workflow for days cannot hold an interactive user session open. **Client Initiated Backchannel Authentication (CIBA)** from OpenID Connect solves this — the agent requests authorisation out-of-band, the user approves on their device at their convenience. Legacy platforms have no equivalent.
+- **Asynchronous Authorization (CIBA):** An agent running a workflow for days cannot hold an interactive user session open. **Client Initiated Backchannel Authentication (CIBA)** from OpenID Connect solves this — the agent requests authorization out-of-band, the user approves on their device at their convenience. Legacy platforms have no equivalent.
 
 - **SCIM for Agents:** The standard for lifecycle management (SCIM) was designed for human users. An IETF draft (*draft-wahl-scim-agent-schema*) is extending SCIM with an `AgenticIdentity` resource type — but this is not yet supported by any production IGA platform.
 
@@ -471,7 +471,7 @@ ServiceNow acquired Veza in March 2026, positioning the combined platform as the
 C1 launched NHI governance in 2025, adding discovery, ownership mapping, and risk alerts for service accounts, API keys, OAuth tokens, certificates, and AI agents within the same platform as human IGA. The Thomas AI agent handles access approvals, access reviews, and policy enforcement autonomously. C1 connects to other applications' MCP servers to factor in contextual signals — a genuinely headless, API-first architecture.
 
 **Opal Security:**
-Opal's 2025 Risk Layer is purpose-built for agentic authorisation requests. The platform ships a native MCP server for AI-driven access automation, making it directly addressable by AI orchestration frameworks like LangChain, AutoGPT, and custom enterprise agent platforms.
+Opal's 2025 Risk Layer is purpose-built for agentic authorization requests. The platform ships a native MCP server for AI-driven access automation, making it directly addressable by AI orchestration frameworks like LangChain, AutoGPT, and custom enterprise agent platforms.
 
 ```mermaid
 flowchart TD
@@ -499,7 +499,7 @@ flowchart TD
 
 For Access Management, Transmit Security's Mosaic platform is building agentic threat defences into the authentication layer itself — detecting AI-driven attacks (deepfakes, synthetic identities, bot-driven credential stuffing), verifying agent identity claims, and applying behavioural risk scoring to non-human sessions.
 
-The critical insight: in an agentic world, the authentication layer is not just protecting humans logging in. It must also verify the provenance and integrity of AI agents presenting themselves as authorised actors.
+The critical insight: in an agentic world, the authentication layer is not just protecting humans logging in. It must also verify the provenance and integrity of AI agents presenting themselves as authorized actors.
 
 ---
 
@@ -551,7 +551,7 @@ mindmap
 
 - **The legacy backend problem is two-layered:** SQL schemas fail at volume, dynamism, and graph traversal. LDAP directories fail at everything agents need — ephemeral identities, delegation chains, and real-time policy evaluation. Both problems compound together and deserve dedicated architectural investment.
 
-- **Standards are behind the curve:** OAuth 2.1 works within a single trust domain. Cross-domain delegation, recursive scope attenuation, async authorisation, and agent-native SCIM provisioning are all under active development but not yet production-ready in mainstream platforms. Organisations deploying AI agents at scale today are ahead of the standards.
+- **Standards are behind the curve:** OAuth 2.1 works within a single trust domain. Cross-domain delegation, recursive scope attenuation, async authorization, and agent-native SCIM provisioning are all under active development but not yet production-ready in mainstream platforms. Organisations deploying AI agents at scale today are ahead of the standards.
 
 - **The market is moving fast:** ServiceNow acquired Veza for ~$1B in 2025 specifically to address the identity governance bottleneck blocking enterprise AI adoption. This signals that agentic identity is no longer a future problem — it is the present competitive battleground.
 

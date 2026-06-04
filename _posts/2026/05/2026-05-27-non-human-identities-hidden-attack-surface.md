@@ -98,7 +98,7 @@ flowchart LR
 
 **API keys** are static tokens issued by a service to authenticate callers. They carry no expiry by default, are often issued to multiple consumers, and are frequently hardcoded into application configuration. A single API key may be used by dozens of scripts written by developers who have since left the organisation.
 
-**OAuth tokens (client credentials)** are the modern alternative to API keys for M2M authentication. The [OAuth 2.0 client credentials grant](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4){:target="_blank"} allows an application to authenticate to an authorisation server and receive a time-limited access token. This is the correct approach for M2M — but only if token issuance, scope management, and rotation are governed.
+**OAuth tokens (client credentials)** are the modern alternative to API keys for M2M authentication. The [OAuth 2.0 client credentials grant](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4){:target="_blank"} allows an application to authenticate to an authorization server and receive a time-limited access token. This is the correct approach for M2M — but only if token issuance, scope management, and rotation are governed.
 
 **Certificates** are used for mTLS (mutual TLS) authentication between services, code signing, and SSH access. Certificates have expiry dates — which is both a governance advantage (natural revocation) and an operational risk (unexpected expiry causes outages).
 

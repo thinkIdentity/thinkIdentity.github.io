@@ -17,7 +17,7 @@ SAML 2.0 is not glamorous. It is verbose XML and browser redirects. But it is th
 
 ## What SAML 2.0 Is
 
-[Security Assertion Markup Language (SAML) 2.0](https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){:target="_blank"} is an XML-based open standard for exchanging authentication and authorisation data between parties. Published by [OASIS](https://www.oasis-open.org/){:target="_blank"} in 2005, it defines:
+[Security Assertion Markup Language (SAML) 2.0](https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf){:target="_blank"} is an XML-based open standard for exchanging authentication and authorization data between parties. Published by [OASIS](https://www.oasis-open.org/){:target="_blank"} in 2005, it defines:
 
 - A **data format** (the XML assertion) for making claims about a user
 - A set of **protocols** (AuthnRequest, LogoutRequest, etc.) for requesting and responding to assertions
@@ -167,7 +167,7 @@ A `SAMLResponse` is a Base64-encoded XML document. Below is a simplified structu
 | `NotBefore` / `NotOnOrAfter` | The validity window — SPs must reject assertions outside this window (typically 5 minutes) |
 | `Audience` | SP entity ID — prevents using an assertion issued for one SP at another SP |
 | `AuthnContextClassRef` | How strongly the user was authenticated (password, MFA, Kerberos, etc.) |
-| `AttributeStatement` | User attributes the IdP passes — email, department, role — used by SP for authorisation |
+| `AttributeStatement` | User attributes the IdP passes — email, department, role — used by SP for authorization |
 
 ---
 
@@ -462,7 +462,7 @@ SAML trust depends on X.509 certificates. When an IdP certificate expires and th
 | Requirement | SAML 2.0 | OAuth 2.0 + OIDC |
 |------------|---------|-----------------|
 | Mobile app login | ❌ No native flow (requires browser embed) | ✅ PKCE flow designed for native apps |
-| REST API authorisation | ❌ Cannot use XML assertion as bearer token | ✅ JWT in `Authorization: Bearer` header |
+| REST API authorization | ❌ Cannot use XML assertion as bearer token | ✅ JWT in `Authorization: Bearer` header |
 | Machine-to-machine | ❌ No equivalent | ✅ client_credentials grant |
 | Refresh tokens | ❌ Not standardised | ✅ Native concept |
 | Token format | ❌ Large XML | ✅ Compact JSON (JWT ~500 bytes) |

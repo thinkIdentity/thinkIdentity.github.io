@@ -134,7 +134,7 @@ B2E is covered in depth in [What Is IAM and Why Every Organisation Needs to Get 
 | Scale | Dozens to thousands of partner organisations; thousands to hundreds of thousands of federated users |
 | Tooling | Ping Federate, Okta Org2Org, Azure AD B2B, ADFS |
 
-**The key architectural point:** You do not own or manage partner identities. Your job is to correctly interpret and authorise based on claims you receive. Claim mapping (their `job-title` → your `partner-tier-2` access group) is where B2B complexity lives.
+**The key architectural point:** You do not own or manage partner identities. Your job is to correctly interpret and authorize based on claims you receive. Claim mapping (their `job-title` → your `partner-tier-2` access group) is where B2B complexity lives.
 
 ---
 
@@ -206,7 +206,7 @@ Okta Workforce Identity, Microsoft Entra ID, and Ping enterprise platforms are o
 | Dimension | B2B2C Reality |
 |-----------|--------------|
 | Authentication | Configured per tenant; consumer-grade UX for end users |
-| Protocol | OAuth 2.0 + OIDC with multi-tenant authorisation servers |
+| Protocol | OAuth 2.0 + OIDC with multi-tenant authorization servers |
 | UX expectation | Your customer's consumer sees their tenant's branded experience |
 | Privacy obligation | Layered — you process on behalf of your customer (data processor); your customer is the data controller |
 | Scale | Sum of all tenants' consumer bases; multi-tenant architecture must isolate data and policy |
