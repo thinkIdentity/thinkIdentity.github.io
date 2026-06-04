@@ -5,7 +5,7 @@ date: 2026-05-02
 category: iam
 categories: [iam]
 tags: [iam, service-accounts, privileged-access, pam, shared-accounts, identity-types, cyberark, beyondtrust, delinea]
-excerpt: "Most IAM programmes are designed around one mental model: the employee. But enterprise environments contain at least five other categories of identity — each with a different lifecycle, a different risk profile, and a different set of controls. Getting any one of them wrong is enough to cause a breach."
+excerpt: "Most IAM program are designed around one mental model: the employee. But enterprise environments contain at least five other categories of identity — each with a different lifecycle, a different risk profile, and a different set of controls. Getting any one of them wrong is enough to cause a breach."
 mermaid: true
 ---
 
@@ -15,7 +15,7 @@ Notice the word "people."
 
 That framing captures a real and important truth — but it is incomplete. Modern enterprise environments contain identities that belong to no person at all: background services that run unattended overnight, administrator accounts that hold the keys to your entire infrastructure, shared logins that three different teams use for "convenience," and automation bots that execute thousands of transactions per hour with no human involvement.
 
-Each of these is an identity. Each carries risk. And most IAM programmes manage them poorly — if at all.
+Each of these is an identity. Each carries risk. And most IAM program manage them poorly — if at all.
 
 This post introduces the full identity landscape, explains the unique lifecycle and risk profile of each identity type, and introduces **Privileged Identity Management** (the discipline that sits at the high-risk end of this spectrum). Agentic and AI agent identities are intentionally out of scope here — they will receive a dedicated treatment when Non-Human Identity (NHI) governance is covered in a future post.
 
@@ -426,7 +426,7 @@ Step 2 — eliminating shared accounts — is the highest-impact compliance fix 
 
 ## Key Takeaways
 
-- **Enterprises contain at least six distinct identity types**, each with different lifecycle patterns, risk profiles, and governance requirements. IAM programmes that focus only on employees are managing a fraction of the actual attack surface.
+- **Enterprises contain at least six distinct identity types**, each with different lifecycle patterns, risk profiles, and governance requirements. IAM program that focus only on employees are managing a fraction of the actual attack surface.
 
 - **Service accounts are the most under-managed identity type** in most organisations. They accumulate silently, carry non-expiring passwords, often hold excessive privileges, and rarely have a named owner after the original creator leaves.
 
@@ -442,4 +442,4 @@ Step 2 — eliminating shared accounts — is the highest-impact compliance fix 
 
 ---
 
-*Part of the IAM from First Principles series.*s
+[*Part of the IAM from First Principles series.*]({% post_url /2026/05/2026-05-01-blog-series-1 %}){:target="_blank"}

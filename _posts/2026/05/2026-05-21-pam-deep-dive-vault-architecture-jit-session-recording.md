@@ -69,7 +69,7 @@ Malware installed on a CircleCI employee's laptop captured a session token while
 **SolarWinds, 2019 — "solarwinds123" in a Public GitHub Repository**
 A security researcher discovered that the password `solarwinds123` — an FTP server credential — had been committed to a [public GitHub repository](https://thehackernews.com/2021/03/solarwinds-blame-intern-for-weak.html){:target="_blank"}. The credential was reported to SolarWinds in 2019. This preceded and was separate from the SUNBURST attack, but demonstrates the same root cause: credentials treated as configuration values rather than secrets requiring vault-grade protection.
 
-These are not incidents at small or poorly resourced organisations. They occurred at companies with active security programmes and, in Uber's case, a deployed PAM tool. Technology is necessary but not sufficient.
+These are not incidents at small or poorly resourced organisations. They occurred at companies with active security program and, in Uber's case, a deployed PAM tool. Technology is necessary but not sufficient.
 
 ---
 
@@ -383,7 +383,7 @@ When integration is straightforward, the developer's default choice becomes the 
 | [HashiCorp Vault](https://developer.hashicorp.com/vault){:target="_blank"} | Vault (open source and enterprise) | Developer-first secrets management; dynamic secrets; Kubernetes-native; widely adopted for application secrets |
 | [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/){:target="_blank"} / [Azure Key Vault](https://azure.microsoft.com/en-in/products/key-vault){:target="_blank"} / [GCP Secret Manager](https://cloud.google.com/secret-manager){:target="_blank"} | Cloud-native secrets | Excellent for cloud-native workloads; limited for human session management and cross-cloud governance |
 
-**Vendor selection considerations:** CyberArk and BeyondTrust are the enterprise defaults for full PAM coverage including session recording and JIT. HashiCorp Vault and cloud-native secrets managers are the right choice for application secrets and developer workflows. Most mature PAM programmes use both: a human-access PAM platform for administrators and a developer-facing secrets manager for applications.
+**Vendor selection considerations:** CyberArk and BeyondTrust are the enterprise defaults for full PAM coverage including session recording and JIT. HashiCorp Vault and cloud-native secrets managers are the right choice for application secrets and developer workflows. Most mature PAM program use both: a human-access PAM platform for administrators and a developer-facing secrets manager for applications.
 
 ---
 
@@ -409,4 +409,4 @@ When integration is straightforward, the developer's default choice becomes the 
 
 ---
 
-*Part of the IAM from First Principles series.*
+[*Part of the IAM from First Principles series.*]({% post_url /2026/05/2026-05-01-blog-series-1 %}){:target="_blank"}
