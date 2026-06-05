@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, service-accounts, privileged-access, pam, shared-accounts, identity-types, cyberark, beyondtrust, delinea]
 excerpt: "Most IAM program are designed around one mental model: the employee. But enterprise environments contain at least five other categories of identity — each with a different lifecycle, a different risk profile, and a different set of controls. Getting any one of them wrong is enough to cause a breach."
 mermaid: true
+pinned: true
+series: "iam-from-first-principles"
+series_title: "IAM from First Principles"
+series_part: 2
 ---
 
 The first post in this series defined IAM as ensuring *the right people have the right access to the right resources, at the right time, and for the right reasons*.

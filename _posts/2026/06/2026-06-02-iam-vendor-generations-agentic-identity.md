@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, iga, access-management, agentic-ai, nhi, sailpoint, veza, okta, transmit-security, opal-security, conductorone, identity-governance]
 excerpt: "Enterprise IAM has evolved through three clear generations. But the rise of autonomous AI agents is exposing a fundamental design flaw that even Gen3 vendors are racing to solve — most identity infrastructure was never designed for identities that think and act on their own."
 mermaid: true
+pinned: true
+series: "iam-agentic-era"
+series_title: "IAM for the Agentic Era"
+series_part: 2
 ---
 
 Most enterprise IAM tools were designed around one central assumption: the Identity at the other end of an access request belongs to a human being.

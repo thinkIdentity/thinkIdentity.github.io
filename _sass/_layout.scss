@@ -438,6 +438,163 @@
 
 .post-list-tags { display: flex; gap: 0.375rem; flex-wrap: wrap; }
 
+// =============================================================================
+// Pinned Series Cards — category page
+// =============================================================================
+.series-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.series-card {
+  border: 1.5px solid $color-iam;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.series-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: $color-iam-bg;
+  border-bottom: 1px solid $color-iam;
+  flex-wrap: wrap;
+}
+
+.series-pin-badge {
+  font-size: $text-xs;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: $color-iam;
+  flex-shrink: 0;
+}
+
+.series-card-title {
+  font-size: $text-base;
+  font-weight: 700;
+  margin: 0;
+  color: $color-text;
+  flex: 1;
+}
+
+.series-post-count {
+  font-size: $text-xs;
+  color: $color-text-muted;
+  white-space: nowrap;
+}
+
+.series-card-body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem;
+  flex-wrap: wrap;
+}
+
+.series-card-excerpt {
+  font-size: $text-sm;
+  color: $color-text-muted;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.series-card-cta {
+  font-size: $text-sm;
+  font-weight: 600;
+  color: $color-iam;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: center;
+
+  &:hover { text-decoration: underline; }
+}
+
+.section-divider {
+  font-size: $text-xs;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-text-faint;
+  margin: 2rem 0 0.5rem;
+}
+
+// =============================================================================
+// Series Navigation — inside post
+// =============================================================================
+.series-nav {
+  margin-bottom: 2rem;
+  padding: 0.875rem 1.25rem;
+  background: $color-iam-bg;
+  border-left: 3px solid $color-iam;
+  border-radius: 0 0.375rem 0.375rem 0;
+}
+
+.series-nav-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.625rem;
+}
+
+.series-nav-title {
+  font-size: $text-sm;
+  font-weight: 700;
+  color: $color-text;
+}
+
+.series-nav-count {
+  font-size: $text-xs;
+  color: $color-iam;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.series-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+
+  @media (min-width: $bp-md) {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.series-nav-prev,
+.series-nav-next,
+.series-nav-toc {
+  font-size: $text-sm;
+  color: $color-text-muted;
+  text-decoration: none;
+  transition: color $transition-fast;
+  line-height: 1.4;
+
+  &:hover { color: $color-iam; text-decoration: none; }
+}
+
+.series-nav-toc {
+  font-size: $text-xs;
+  color: $color-text-faint;
+
+  @media (min-width: $bp-md) { margin: 0 auto; }
+
+  &:hover { color: $color-iam; }
+}
+
+.series-nav-next {
+  @media (min-width: $bp-md) { margin-left: auto; text-align: right; }
+}
+
+// =============================================================================
 .post-list-arrow {
   color: $color-text-faint;
   font-size: $text-lg;

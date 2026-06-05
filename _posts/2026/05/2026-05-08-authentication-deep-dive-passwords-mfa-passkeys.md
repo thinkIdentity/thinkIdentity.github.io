@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, authentication, mfa, passkeys, webauthn, totp, otp, passwords, device-binding, adaptive-auth]
 excerpt: "Authentication is the first security decision your platform makes about every user. Getting it right means understanding what happens at every step — how credentials are verified, what the client receives, what signals the system collects, and how modern authentication eliminates the password entirely."
 mermaid: true
+pinned: true
+series: "iam-from-first-principles"
+series_title: "IAM from First Principles"
+series_part: 4
 ---
 
 Authentication is the act of proving you are who you claim to be. It sounds simple. In practice, it is a chain of cryptographic operations, risk evaluations, session management decisions, and trust signals — all executing in under a second, every time someone opens a given application.

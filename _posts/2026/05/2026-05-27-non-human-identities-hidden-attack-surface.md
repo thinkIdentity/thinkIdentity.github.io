@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, nhi, service-accounts, api-keys, certificates, oauth-tokens, secrets-management, workload-identity, cyberark, hashicorp-vault]
 excerpt: "Non-human identities — service accounts, API keys, certificates, OAuth tokens, SSH keys, and container workload identities — now outnumber human identities in most enterprise environments, yet receive a fraction of the governance attention. Each unmanaged NHI is a dormant credential waiting to be exploited. This post maps the full NHI landscape, explains why standard IAM controls do not translate directly, and establishes how each IAM pillar must adapt to govern identities that never clock out, never change roles through HR, and never respond to an MFA prompt."
 mermaid: true
+pinned: true
+series: "iam-from-first-principles"
+series_title: "IAM from First Principles"
+series_part: 12
 ---
 
 The [previous post on Zero Trust]({% post_url /2026/05/2026-05-25-zero-trust-why-trust-but-verify-is-dead %}){:target="_blank"} established that machine and non-human identities now significantly outnumber human identities in most enterprise environments — each with their own access path, credential, and trust assumption. According to [CyberArk's Identity Security Threat Landscape Report](https://www.cyberark.com/resources/ebooks/cyberark-2023-identity-security-threat-landscape-report){:target="_blank"}, organisations see non-human identities outnumbering humans by a wide margin, with the ratio growing every year as microservices, automation, and cloud workloads multiply.

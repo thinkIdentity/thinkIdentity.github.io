@@ -5,6 +5,10 @@ layout: default
 {%- assign cat_lower = page.category | downcase -%}
 {%- assign cat_posts = site.posts | where_exp: "p", "p.categories contains page.category or p.category == page.category" -%}
 
+{%- assign pinned_posts  = cat_posts | where: "pinned", true -%}
+{%- assign regular_posts = cat_posts | where_exp: "p", "p.pinned != true" -%}
+{%- assign series_slugs  = pinned_posts | map: "series" | uniq -%}
+
 <div class="category-page container">
 
   <header class="category-header">
@@ -14,9 +18,37 @@ layout: default
     <span class="post-count">{{ cat_posts | size }} post{% if cat_posts.size != 1 %}s{% endif %}</span>
   </header>
 
-  {%- if cat_posts.size > 0 %}
+  {%- if series_slugs.size > 0 %}
+  <div class="series-cards">
+    {%- for slug in series_slugs %}
+      {%- assign s_posts      = pinned_posts | where: "series", slug | sort: "series_part" -%}
+      {%- assign s_overview   = s_posts | where: "series_part", 0 | first -%}
+      {%- unless s_overview -%}{%- assign s_overview = s_posts | first -%}{%- endunless -%}
+      {%- assign s_parts      = s_posts | where_exp: "p", "p.series_part > 0" -%}
+      {%- assign s_part_count = s_parts | size -%}
+      {%- assign s_title      = s_posts | map: "series_title" | first -%}
+
+    <div class="series-card">
+      <div class="series-card-header">
+        <span class="series-pin-badge">Series</span>
+        <h2 class="series-card-title">{{ s_title }}</h2>
+        <span class="series-post-count">{{ s_part_count }} part{% if s_part_count != 1 %}s{% endif %}</span>
+      </div>
+      <div class="series-card-body">
+        {%- if s_overview.excerpt %}
+        <p class="series-card-excerpt">{{ s_overview.excerpt | strip_html | truncate: 200 }}</p>
+        {%- endif %}
+        <a href="{{ s_overview.url | relative_url }}" class="series-card-cta">Start Series →</a>
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+  {%- endif %}
+
+  {%- if regular_posts.size > 0 %}
+  <p class="section-divider">All Posts</p>
   <div class="post-list">
-    {%- for post in cat_posts %}
+    {%- for post in regular_posts %}
     <article class="post-list-item">
       <div class="post-list-meta">
         <time datetime="{{ post.date | date_to_xmlschema }}">
@@ -42,7 +74,9 @@ layout: default
     </article>
     {%- endfor %}
   </div>
-  {%- else %}
+  {%- endif %}
+
+  {%- if cat_posts.size == 0 %}
   <div class="empty-state">
     <p>No posts yet — the first one is on its way. ✍️</p>
   </div>

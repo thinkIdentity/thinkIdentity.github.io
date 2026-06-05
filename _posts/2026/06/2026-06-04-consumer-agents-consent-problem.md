@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, consent, oauth, agentic-ai, b2c, b2b2c, ciba, delegation, consumer-identity, openid-connect, fintech, open-banking]
 excerpt: "You have clicked Allow hundreds of times. You almost certainly did not read what you agreed to. For human apps, that was an acceptable shortcut. For autonomous AI agents making financial decisions, healthcare choices, or legal commitments on your behalf — consent is no longer a formality. This post maps what consent actually is, how it works in the backend, why it breaks for agents, and who is responsible when it goes wrong."
 mermaid: true
+pinned: true
+series: "iam-agentic-era"
+series_title: "IAM for the Agentic Era"
+series_part: 4
 ---
 
 You have clicked **Allow** hundreds of times. A consent screen appeared, you skimmed it, you clicked through. That works tolerably well when the app you are authorizing passively reads your data — it can view your calendar, it can see your inbox.

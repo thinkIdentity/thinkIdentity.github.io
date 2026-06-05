@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, b2e, b2b, b2c, b2b2c, b2bc, m2m, ciam, identity-architecture, api-economy, open-banking]
 excerpt: "Every IAM decision you make — which protocol, which vendor, which authentication UX — is downstream of one question most teams never answer explicitly: what is the relationship between your business and the people (or systems) holding your identities? Get this wrong and the architecture will fight you at every layer."
 mermaid: true
+pinned: true
+series: "iam-from-first-principles"
+series_title: "IAM from First Principles"
+series_part: 3
 ---
 
 Before you choose a protocol, pick a vendor, or design a login screen, there is one question that determines every architectural decision that follows:

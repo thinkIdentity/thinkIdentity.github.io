@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, agentic-ai, ai-agents, identity, mcp, oauth, delegation, nhi, governance, identity-governance]
 excerpt: "AI agents are the first category of identity that genuinely breaks IAM's founding assumption — that a human is present, accountable, and in control at the other end of every access request. This post maps what agentic identity is, why it fits no existing category, and what it means for every stakeholder responsible for governing it."
 mermaid: true
+pinned: true
+series: "iam-agentic-era"
+series_title: "IAM for the Agentic Era"
+series_part: 1
 ---
 
 Every IAM system ever built rests on one foundational assumption: a human being is ultimately responsible for the access request being made.

@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, deployment, cloud-iam, hybrid, on-premise, okta, keycloak, azure, aws, data-residency, shared-responsibility]
 excerpt: "Every IAM decision — IGA, Access Management, PAM, Access Reviews — must eventually answer the same question: where does this run? The answer is not a technology choice; it is a business, regulatory, and risk decision with consequences that unfold over years. This post maps the deployment landscape, the tradeoffs at each layer, and the real-world incidents that show what happens when the wrong model is chosen for the wrong reasons."
 mermaid: true
+pinned: true
+series: "iam-from-first-principles"
+series_title: "IAM from First Principles"
+series_part: 10
 ---
 
 The previous posts in this series covered the four operational pillars of enterprise IAM: [IGA]({% post_url /2026/05/2026-05-08-authentication-deep-dive-passwords-mfa-passkeys %}){:target="_blank"}, [Access Reviews]({% post_url /2026/05/2026-05-19-access-reviews-operational-heart-iam-governance %}){:target="_blank"}, and [PAM]({% post_url /2026/05/2026-05-21-pam-deep-dive-vault-architecture-jit-session-recording %}){:target="_blank"}, plus the [authentication and protocol layer]({% post_url /2026/05/2026-05-08-authentication-deep-dive-passwords-mfa-passkeys %}){:target="_blank"}. All of those disciplines assume that software is deployed, running, and integrated with your systems. What they do not answer is: *where* does that software run, who is responsible for it, and what changes when it moves from one model to another?

@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, access-reviews, certification, governance, audit, compliance, iga, sox, pci-dss, rubber-stamping]
 excerpt: "An access review is not a checkbox exercise. It is the governance mechanism that converts identity data into audit evidence — and the point where most organisations quietly fail. Understanding how campaigns work, why they break, and what good evidence looks like is the difference between genuine governance and a well-documented false sense of control."
 mermaid: true
+pinned: true
+series: "iam-from-first-principles"
+series_title: "IAM from First Principles"
+series_part: 8
 ---
 
 The previous post in this series established how [IGA]({% post_url /2026/05/2026-05-17-iga-deep-dive-provisioning-role-engineering-sod %}){:target="_blank"} automates the provisioning and deprovisioning of access across the enterprise. IGA ensures that the *right* access is granted when someone joins and removed when they leave. But there is a fundamental gap in provisioning alone: it only corrects access at the moment of a lifecycle event. It does not answer the question that keeps regulators and CISOs awake at night — **Is the access that was granted last year still appropriate today?**

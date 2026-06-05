@@ -46,6 +46,54 @@ layout: default
 
   </header>
 
+  {%- if page.series %}
+  {%- assign s_all   = site.posts | where: "series", page.series | sort: "series_part" -%}
+  {%- assign s_parts = s_all | where_exp: "p", "p.series_part > 0" -%}
+  {%- assign s_total = s_parts | size -%}
+  {%- assign s_overview = s_all | where: "series_part", 0 | first -%}
+  {%- unless s_overview -%}{%- assign s_overview = s_all | first -%}{%- endunless -%}
+
+  {%- assign s_idx = 0 -%}
+  {%- for p in s_all -%}
+    {%- if p.url == page.url -%}{%- assign s_idx = forloop.index0 -%}{%- endif -%}
+  {%- endfor -%}
+
+  {%- assign s_prev_idx = s_idx | minus: 1 -%}
+  {%- assign s_next_idx = s_idx | plus: 1 -%}
+  {%- assign s_prev = nil -%}
+  {%- assign s_next = nil -%}
+  {%- for p in s_all -%}
+    {%- if forloop.index0 == s_prev_idx -%}{%- assign s_prev = p -%}{%- endif -%}
+    {%- if forloop.index0 == s_next_idx -%}{%- assign s_next = p -%}{%- endif -%}
+  {%- endfor -%}
+
+  <nav class="series-nav container" aria-label="Series navigation">
+    <div class="series-nav-info">
+      <span class="series-nav-title">{{ page.series_title }}</span>
+      <span class="series-nav-count">
+        {%- if page.series_part == 0 %}Series Overview
+        {%- else %}Part {{ page.series_part }} of {{ s_total }}
+        {%- endif %}
+      </span>
+    </div>
+    <div class="series-nav-links">
+      {%- if s_prev %}
+      <a href="{{ s_prev.url | relative_url }}" class="series-nav-prev">
+        ← {%- if s_prev.series_part == 0 %} Overview{%- else %} Part {{ s_prev.series_part }}{%- endif %}: {{ s_prev.title | truncate: 42 }}
+      </a>
+      {%- endif %}
+      {%- if s_overview and s_overview.url != page.url %}
+      <a href="{{ s_overview.url | relative_url }}" class="series-nav-toc">📋 Full Series</a>
+      {%- endif %}
+      {%- if s_next %}
+      <a href="{{ s_next.url | relative_url }}" class="series-nav-next">
+        {%- if s_next.series_part == 0 %}Overview{%- else %}Part {{ s_next.series_part }}{%- endif %}: {{ s_next.title | truncate: 42 }} →
+      </a>
+      {%- endif %}
+    </div>
+  </nav>
+  {%- endif %}
+
   <div class="post-content container" itemprop="articleBody">
     {{ content }}
   </div>
