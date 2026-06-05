@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, agentic-ai, ai-agents, identity, access-management, nhi, oauth, delegation, series]
 excerpt: "AI agents are reshaping every assumption IAM was built on. This series picks up where First Principles left off — covering what agentic identity actually is, why existing tools were not built for it, and how to architect identity governance for systems that think and act on their own."
 mermaid: true
+pinned: true
+series: "iam-agentic-era"
+series_title: "IAM for the Agentic Era"
+series_part: 0
 ---
 
 The [IAM from First Principles series]({% post_url /2026/05/2026-05-01-blog-series-1 %}){:target="_blank"} covered the complete foundational landscape — from authentication protocols and governance workflows to non-human identities and deployment models.
@@ -31,7 +35,7 @@ This series addresses that directly.
 
 ## Part 3: The Agentic Era — IAM for AI Agents
 
-5. 🔜 Agentic Identity Protocols — OAuth 2.1, CIBA, OIDC-A, and the Delegation Chain Problem
+5. ✅ [Agentic Identity Protocols — OAuth 2.1, CIBA, OIDC-A, and the Delegation Chain Problem]({% post_url /2026/06/2026-06-05-agentic-identity-protocols %}){:target="_blank"}
 6. 🔜 Building Secure AI Agent Systems — A Practical Architecture Guide
 7. 🔜 NHI Governance at Scale — Discovery, Ownership, and Policy for the 90:1 World
 

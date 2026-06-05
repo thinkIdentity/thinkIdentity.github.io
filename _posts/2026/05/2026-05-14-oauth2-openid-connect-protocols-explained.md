@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, oauth2, openid-connect, jwt, pkce, token, authorization, oidc, api-security, m2m]
 excerpt: "OAuth 2.0 is the protocol that lets Netflix remember you across devices, lets your shopping app charge your saved card without seeing it, and lets 'Sign in with Google' exist at all. Understanding its flows, tokens, and extension points is the prerequisite for securing any modern API, mobile app, or distributed system."
 mermaid: true
+pinned: true
+series: "iam-from-first-principles"
+series_title: "IAM from First Principles"
+series_part: 6
 ---
 
 In 2006, Twitter needed a way to let third-party apps post on a user's behalf — without the user giving their Twitter password to the third-party. The solution they built was the direct ancestor of OAuth. By 2010, OAuth 1.0 was a standard. By 2012, [OAuth 2.0 (RFC 6749)](https://datatracker.ietf.org/doc/html/rfc6749){:target="_blank"} was published, addressing OAuth 1.0's complexity and lack of mobile support.

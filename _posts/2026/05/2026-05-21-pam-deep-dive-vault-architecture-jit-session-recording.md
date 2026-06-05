@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, pam, vault, privileged-access, jit, session-recording, credential-rotation, cyberark, secrets-management, credential-scanning]
 excerpt: "Privileged credentials — admin passwords, API keys, root accounts, service account tokens — are the highest-value target in any environment. PAM is the discipline that ensures those credentials are stored securely, accessed under control, rotated systematically, and never left exposed. This post covers vault architecture, the access model, the governance gaps that technology alone cannot close, and the publicly documented breaches that show what happens when it all fails."
 mermaid: true
+pinned: true
+series: "iam-from-first-principles"
+series_title: "IAM from First Principles"
+series_part: 9
 ---
 
 The previous posts in this series established how [IGA]({% post_url /2026/05/2026-05-17-iga-deep-dive-provisioning-role-engineering-sod %}){:target="_blank"} governs access for the entire identity population, and how [access reviews]({% post_url /2026/05/2026-05-19-access-reviews-operational-heart-iam-governance %}){:target="_blank"} keep that access appropriate over time. Both disciplines apply broadly — to every employee, contractor, and system account.

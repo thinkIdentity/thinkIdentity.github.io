@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, identity, access-management, zero-trust, basics]
 excerpt: "Identity and Access Management sounds like a compliance checkbox. It is actually the foundation on which modern enterprise security is built — and most organisations get it wrong in the same predictable ways."
 mermaid: true
+pinned: true
+series: "iam-from-first-principles"
+series_title: "IAM from First Principles"
+series_part: 1
 ---
 
 Most security breaches do not start with a sophisticated zero-day exploit. They start with something embarrassingly simple: the wrong person had access to something they should not have had.

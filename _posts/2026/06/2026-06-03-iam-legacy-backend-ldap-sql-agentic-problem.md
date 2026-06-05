@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, ldap, sql, architecture, agentic-ai, nhi, graph-database, identity-infrastructure, modernisation]
 excerpt: "Most discussions about IAM modernisation focus on features and vendors. The real constraint is lower down the stack — a 40-year-old directory protocol and a relational schema that was never designed for identities that are ephemeral, autonomous, and numbered in the millions."
 mermaid: true
+pinned: true
+series: "iam-agentic-era"
+series_title: "IAM for the Agentic Era"
+series_part: 3
 ---
 
 Every time a new IAM vendor promises to "solve" agentic identity by adding a feature to their platform, ask one question: *what is their backend?*

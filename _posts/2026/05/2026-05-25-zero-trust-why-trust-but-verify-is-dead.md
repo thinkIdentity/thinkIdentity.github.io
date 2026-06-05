@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, zero-trust, network-security, microsegmentation, nist, cisa, sase, identity-perimeter, telemetry, lateral-movement]
 excerpt: "For decades, enterprise security was built on one assumption: the network perimeter separates trusted insiders from untrusted outsiders. That assumption is now obsolete. Mobile devices, cloud services, remote work, third-party vendors, AI agents, and bots have dissolved the perimeter entirely. Zero Trust is the architectural response — and it requires rethinking every process, every access flow, and every monitoring system in the organisation."
 mermaid: true
+pinned: true
+series: "iam-from-first-principles"
+series_title: "IAM from First Principles"
+series_part: 11
 ---
 
 The [previous post]({% post_url /2026/05/2026-05-23-iam-deployment-models-cloud-hybrid-on-premise %}){:target="_blank"} established where IAM infrastructure runs — cloud, on-premise, or hybrid. But deployment location answers only half the question. The other half is: once a user, device, or workload reaches that infrastructure, what do you trust?

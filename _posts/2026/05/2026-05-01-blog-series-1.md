@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, identity, access-management, zero-trust, basics]
 excerpt: "If you are new to IAM, here is a suggested reading path for this series-1"
 mermaid: true
+pinned: true
+series: "iam-from-first-principles"
+series_title: "IAM from First Principles"
+series_part: 0
 ---
 Most people treat Identity and Access Management (IAM) as a compliance checklist. In reality, it is the fundamental core of modern security architecture. As we race into the AI era, traditional frameworks are breaking. We are moving from a human-centric world to a 90:1 world dominated by non-human identities and autonomous AI agents. If your foundation is weak, your system will fail. This comprehensive series strips IAM down to its first principles. It maps a clear path from legacy concepts to the cutting edge of AI governance:
 

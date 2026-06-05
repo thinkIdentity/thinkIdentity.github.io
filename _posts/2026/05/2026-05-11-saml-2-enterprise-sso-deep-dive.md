@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, saml, sso, federation, adfs, enterprise-auth, xml-signature, single-logout, idp, sp]
 excerpt: "SAML 2.0 has been the backbone of enterprise Single Sign-On for two decades. Understanding how assertions flow, how signatures are verified, and where the standard breaks down is essential before you can design or troubleshoot any enterprise identity integration."
 mermaid: true
+pinned: true
+series: "iam-from-first-principles"
+series_title: "IAM from First Principles"
+series_part: 5
 ---
 
 If you have ever clicked an app tile in your company portal and been instantly logged in — no second password, no redirect visible to you — you have experienced [SAML 2.0](https://www.oasis-open.org/committees/security/){:target="_blank"} in action. It is the protocol that makes that seamless jump between your identity provider and any of the thousands of enterprise applications it is connected to.

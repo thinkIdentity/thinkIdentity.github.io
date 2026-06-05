@@ -7,6 +7,10 @@ categories: [iam]
 tags: [iam, iga, provisioning, role-engineering, segregation-of-duties, scim, jml, role-mining, sailpoint, saviynt, identity-governance]
 excerpt: "Identity Governance and Administration is the discipline that prevents your organisation from drowning in access sprawl. Without it, access accumulates faster than it is reviewed, roles multiply faster than they are rationalised, and your compliance posture erodes silently — until an audit or a breach reveals what nobody wanted to find."
 mermaid: true
+pinned: true
+series: "iam-from-first-principles"
+series_title: "IAM from First Principles"
+series_part: 7
 ---
 
 Every organisation that has been running for more than five years has the same hidden problem: access that was granted but never removed, roles that were created for one project and applied to dozens of users, and accounts in production systems that no longer belong to anyone who still works there.
