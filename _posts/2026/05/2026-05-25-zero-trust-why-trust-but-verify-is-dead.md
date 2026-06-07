@@ -210,7 +210,7 @@ This is why every IAM capability described in this series — strong authenticat
 
 ## Who Should Own Zero Trust — And What Does Enforcement Actually Cost?
 
-Establishing that identity is the new perimeter raises an immediate practical question: does that make Zero Trust an IAM problem? The answer determines who drives the programme, who funds the integration work, and who gets blamed when it stalls.
+Establishing that identity is the new perimeter raises an immediate practical question: does that make Zero Trust an IAM problem? The answer determines who drives the program, who funds the integration work, and who gets blamed when it stalls.
 
 **Is it an IAM problem?** The identity pillar is the most foundational — if identity is wrong, every other pillar's enforcement is wrong. IAM teams have the most complete view of who is accessing what. But IAM teams do not own the network, the endpoint estate, or the applications.
 
@@ -218,7 +218,7 @@ Establishing that identity is the new perimeter raises an immediate practical qu
 
 **Is it an architecture problem?** Every system integration must be redesigned around the assumption of no implicit trust — which is an architectural mandate. But architecture teams do not operate the systems.
 
-The answer is all three, with one accountable driver. A Zero Trust programme without a named owner — typically an Enterprise Security Architect or a CISO-sponsored initiative — devolves into each team advancing their own pillar in isolation, producing the partial coverage described earlier. IAM is the most natural initiating discipline because identity is the enforcement point for everything else. But the IAM team cannot succeed without executive mandate, cross-team commitment, and budget for the integration work.
+The answer is all three, with one accountable driver. A Zero Trust program without a named owner — typically an Enterprise Security Architect or a CISO-sponsored initiative — devolves into each team advancing their own pillar in isolation, producing the partial coverage described earlier. IAM is the most natural initiating discipline because identity is the enforcement point for everything else. But the IAM team cannot succeed without executive mandate, cross-team commitment, and budget for the integration work.
 
 ### The Real Engineering Cost — Every Integration Must Be Rethought
 
@@ -347,7 +347,7 @@ flowchart TB
 
 **Without telemetry, Zero Trust is enforcement without awareness.** You can block access you should block. But you cannot detect access you *should* block but are *allowing* due to policy gaps. You cannot see that a service account is accessing data it has never accessed before. You cannot correlate an unusual login from a mobile device with an API call from an unregistered IP two minutes later.
 
-**Visualisation is not optional complexity.** The orchestration of five pillars, across hundreds of applications, thousands of users, and millions of machine identities, is genuinely difficult to manage. A Zero Trust programme without a visualisation layer — dashboards that show policy enforcement state, access anomalies, and pillar maturity — is operating blind. When something goes wrong, the investigation depends on having recorded what went right first.
+**Visualisation is not optional complexity.** The orchestration of five pillars, across hundreds of applications, thousands of users, and millions of machine identities, is genuinely difficult to manage. A Zero Trust program without a visualisation layer — dashboards that show policy enforcement state, access anomalies, and pillar maturity — is operating blind. When something goes wrong, the investigation depends on having recorded what went right first.
 
 The tooling stack required to operationalise monitoring:
 - **SIEM** ([Microsoft Sentinel](https://azure.microsoft.com/en-in/products/microsoft-sentinel){:target="_blank"}, [Splunk](https://www.splunk.com/){:target="_blank"}, [IBM QRadar](https://www.ibm.com/products/qradar-siem){:target="_blank"}): log aggregation, correlation rules, alerting
@@ -418,7 +418,7 @@ Most large enterprises are at the **Initial** stage across most pillars. Reachin
 
 - **Zero Trust means never trust, always verify — for every identity, every device, every request, every session.** The NIST SP 800-207 definition makes clear: this is not about distrust. It is about continuous verification based on all available signals.
 
-- **Zero Trust has five pillars.** Identity, Device, Network, Application/Workload, and Data. All five must progress together. A programme strong in identity but weak in network segmentation still has a lateral movement problem.
+- **Zero Trust has five pillars.** Identity, Device, Network, Application/Workload, and Data. All five must progress together. A program strong in identity but weak in network segmentation still has a lateral movement problem.
 
 - **Identity is the new perimeter.** When the network no longer defines trust, identity becomes the policy enforcement point for every access decision. Every IAM capability in this series — IGA, authentication, PAM, access reviews — feeds the Zero Trust policy engine.
 

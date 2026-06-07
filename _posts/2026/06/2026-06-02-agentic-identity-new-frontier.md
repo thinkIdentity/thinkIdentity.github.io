@@ -300,7 +300,7 @@ In a B2B2C scenario the ownership question has no clean answer yet:
 | Question | B2E Answer | B2B2C Answer |
 |----------|-----------|--------------|
 | Who provisions the agent? | The enterprise IT team | The fintech who built it |
-| Who governs its access? | The enterprise IGA programme | Unclear — the platform, the fintech, or both? |
+| Who governs its access? | The enterprise IGA program | Unclear — the platform, the fintech, or both? |
 | Who is accountable if it acts harmfully? | The organisation | Disputed — fintech, platform, or both? |
 | Who can revoke it? | The enterprise | The customer, the platform, or the fintech? |
 | Whose audit log captures the action? | The organisation's SIEM | Fragmented across fintech and platform |

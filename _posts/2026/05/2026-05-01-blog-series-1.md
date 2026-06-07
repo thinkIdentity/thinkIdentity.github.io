@@ -18,7 +18,7 @@ Whether you are new to the field or an architect preparing for agentic delegatio
 
 ## Part 1: Foundations — What Is Identity and Why Does It Matter?
 1. ✅ [What is IAM and why it matters]({% post_url /2026/05/2026-05-01-what-is-iam-and-why-it-matters %}){:target="_blank"}
-2. ✅ [Beyond the Employee — Every Type of Identity Your IAM Programme Must Manage]({% post_url /2026/05/2026-05-02-identity-types-and-privileged-access-management %}){:target="_blank"}
+2. ✅ [Beyond the Employee — Every Type of Identity Your IAM program Must Manage]({% post_url /2026/05/2026-05-02-identity-types-and-privileged-access-management %}){:target="_blank"}
 3. ✅ [Who Are Your Users? Identity Relationship Models — B2E, B2B, B2C, B2B2C, and Hyperscale]({% post_url /2026/05/2026-05-05-identity-relationship-models %}){:target="_blank"}
 
 ## Part 2: Authentication — How Do You Prove Who You Are?

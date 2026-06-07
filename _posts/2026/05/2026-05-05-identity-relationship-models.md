@@ -115,7 +115,7 @@ The answers determine your authentication UX, your protocol choice, your privacy
 | Scale | Predictable; managed headcount |
 | Tooling | Okta Workforce, Microsoft Entra ID, Ping, JumpCloud |
 
-B2E is covered in depth in [What Is IAM and Why Every Organisation Needs to Get It Right]({% post_url /2026/05/2026-05-01-what-is-iam-and-why-it-matters%}) and [Beyond the Employee — Every Type of Identity Your IAM Programme Must Manage]({% post_url /2026/05/2026-05-02-identity-types-and-privileged-access-management%}).
+B2E is covered in depth in [What Is IAM and Why Every Organisation Needs to Get It Right]({% post_url /2026/05/2026-05-01-what-is-iam-and-why-it-matters%}) and [Beyond the Employee — Every Type of Identity Your IAM program Must Manage]({% post_url /2026/05/2026-05-02-identity-types-and-privileged-access-management%}).
 
 ---
 
@@ -315,7 +315,7 @@ mindmap
 | Tooling | HashiCorp Vault, SPIFFE/SPIRE, AWS IAM Roles for Service Accounts, cloud-native workload identity |
 
 **Why M2M is distinct from service accounts discussed in earlier :**
-[Beyond the Employee — Every Type of Identity Your IAM Programme Must Manage]({% post_url /2026/05/2026-05-02-identity-types-and-privileged-access-management %}){:target="_blank"} covers service accounts as *entities* — static credentials assigned to applications. M2M as a *relationship model* goes further: the credentials are ephemeral (rotated every hour or per-request), the authentication is mutual (both parties verify each other), and the scale can reach millions. At microservices scale, M2M identity volume is closer to B2C than to B2E — but the governance model is entirely different from both.
+[Beyond the Employee — Every Type of Identity Your IAM program Must Manage]({% post_url /2026/05/2026-05-02-identity-types-and-privileged-access-management %}){:target="_blank"} covers service accounts as *entities* — static credentials assigned to applications. M2M as a *relationship model* goes further: the credentials are ephemeral (rotated every hour or per-request), the authentication is mutual (both parties verify each other), and the scale can reach millions. At microservices scale, M2M identity volume is closer to B2C than to B2E — but the governance model is entirely different from both.
 
 ---
 

@@ -317,7 +317,7 @@ This last point directly addresses the OpenID Foundation's identified gap around
 
 ## The Migration Reality
 
-Replacing LDAP and SQL entirely is a multi-year programme for most enterprises. The pragmatic path is **layered augmentation**:
+Replacing LDAP and SQL entirely is a multi-year program for most enterprises. The pragmatic path is **layered augmentation**:
 
 ```mermaid
 %%{init: { 'themeVariables': { 'lineColor': '#64748b' } } }%%

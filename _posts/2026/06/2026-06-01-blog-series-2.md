@@ -36,8 +36,8 @@ This series addresses that directly.
 ## Part 3: The Agentic Era — IAM for AI Agents
 
 5. ✅ [Agentic Identity Protocols — OAuth 2.1, CIBA, OIDC-A, and the Delegation Chain Problem]({% post_url /2026/06/2026-06-05-agentic-identity-protocols %}){:target="_blank"}
-6. 🔜 Building Secure AI Agent Systems — A Practical Architecture Guide
-7. 🔜 NHI Governance at Scale — Discovery, Ownership, and Policy for the 90:1 World
+6. ✅ [Building Secure AI Agent Systems — A Practical Architecture Guide]({% post_url /2026/06/2026-06-06-building-secure-ai-agent-systems %}){:target="_blank"}
+7. ✅ [NHI Governance at Scale — Discovery, Ownership, and Policy for the 90:1 World]({% post_url /2026/06/2026-06-07-nhi-governance-at-scale %}){:target="_blank"}
 
 ---
 

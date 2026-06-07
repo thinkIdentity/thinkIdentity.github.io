@@ -67,7 +67,7 @@ Before these mandates, most organisations reviewed access only when a problem su
 
 ## Five Perspectives on Why Access Reviews Matter
 
-Access reviews mean different things to different stakeholders. Understanding each perspective is essential for designing a programme that satisfies all of them.
+Access reviews mean different things to different stakeholders. Understanding each perspective is essential for designing a program that satisfies all of them.
 
 ```mermaid
 flowchart TB
@@ -156,13 +156,13 @@ Access reviews are not one-size-fits-all. Different review types serve different
 | **Orphaned Account Review** | IGA team / app owners | Accounts with no correlated identity owner | Monthly (automated scan) |
 | **Service Account / NHI Review** | Application team | Non-human accounts, API credentials, service accounts | Quarterly or on rotation |
 
-Each type produces different evidence and satisfies different audit controls. A mature access governance programme runs multiple review types on staggered schedules — not one annual campaign that covers everything at once.
+Each type produces different evidence and satisfies different audit controls. A mature access governance program runs multiple review types on staggered schedules — not one annual campaign that covers everything at once.
 
 ---
 
 ## The Certification Campaign — Anatomy
 
-A certification campaign is the operational vehicle for conducting access reviews at scale. Understanding its lifecycle is essential for both running an effective programme and for interpreting the evidence it produces.
+A certification campaign is the operational vehicle for conducting access reviews at scale. Understanding its lifecycle is essential for both running an effective program and for interpreting the evidence it produces.
 
 ```mermaid
 flowchart TD
@@ -253,7 +253,7 @@ The manager can now make an informed decision. The last-used date alone (14 mont
 | Last access date | When the account last used this entitlement (most powerful signal) |
 | SoD flag | Whether this entitlement is part of any known conflict pair |
 
-Entitlement descriptions are not automatically generated — they must be curated during application onboarding and maintained over time. This is one of the most consistently underestimated effort areas in any IGA programme.
+Entitlement descriptions are not automatically generated — they must be curated during application onboarding and maintained over time. This is one of the most consistently underestimated effort areas in any IGA program.
 
 ---
 
@@ -340,7 +340,7 @@ flowchart LR
     style Bad fill:#7f1d1d,stroke:#ef4444,color:#fff
 ```
 
-**The revocation follow-through gap is the most serious audit finding.** An auditor who finds that 40 access items were marked for revocation but remain active in target systems will question the integrity of the entire programme — not just those 40 items. This gap typically occurs when connectors fail silently, when manual revocation was required (for apps without automated provisioning), or when the revocation queue is not monitored.
+**The revocation follow-through gap is the most serious audit finding.** An auditor who finds that 40 access items were marked for revocation but remain active in target systems will question the integrity of the entire program — not just those 40 items. This gap typically occurs when connectors fail silently, when manual revocation was required (for apps without automated provisioning), or when the revocation queue is not monitored.
 
 **Evidence retention** is also important. Campaign reports, reviewer action logs, and revocation confirmation records must be retained for the duration required by the applicable regulation — typically [three to seven years](https://www.sec.gov/rules/final/33-8220.htm){:target="_blank"} for SOX-covered entities.
 
@@ -370,7 +370,7 @@ flowchart LR
 
 When the same access is revoked in every campaign — the same entitlement, revoked from the same type of user — it is a signal that the underlying role definition or birthright policy is wrong. Access reviews surface these signals. IGA automation acts on them. Over time, the feedback loop produces a cleaner access model that requires fewer revocations in each successive campaign.
 
-This is the difference between an access review programme that reduces risk over time and one that merely produces evidence without improving the underlying posture.
+This is the difference between an access review program that reduces risk over time and one that merely produces evidence without improving the underlying posture.
 
 ---
 
@@ -378,7 +378,7 @@ This is the difference between an access review programme that reduces risk over
 
 - **Access reviews exist because of regulation, not best practice.** SOX, PCI-DSS, HIPAA, and ISO 27001 all mandate periodic review of user access rights. The question is not whether to run them — it is whether to run them well.
 
-- **Five stakeholders, five success criteria.** Regulators want evidence of control. Executives want risk quantification. Auditors want completeness and accuracy. Implementors want data quality. Managers want clarity and manageable volume. A programme that ignores any of these perspectives will fail one of these audiences.
+- **Five stakeholders, five success criteria.** Regulators want evidence of control. Executives want risk quantification. Auditors want completeness and accuracy. Implementors want data quality. Managers want clarity and manageable volume. A program that ignores any of these perspectives will fail one of these audiences.
 
 - **Campaign completeness and revocation follow-through are the two metrics auditors care about most.** Completing 95% of a campaign with confirmed revocations in target systems is stronger evidence than completing 100% with unexecuted revocations.
 

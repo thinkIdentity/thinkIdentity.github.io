@@ -132,7 +132,7 @@ In practice, the deployment model is often determined by cost before all other f
 | Security patching | Vendor-managed, often same-day | Your team; testing + approval cycle; weeks to months |
 | Scaling for peak load | Vendor scales; you may pay more | You provision; over-provision is waste, under-provision is an outage |
 | 24×7 platform operations | Vendor | Your on-call team |
-| Penetration testing evidence for audit | Vendor SOC 2 report | Your own pentest programme |
+| Penetration testing evidence for audit | Vendor SOC 2 report | Your own pentest program |
 
 At mid-market scale (under 10,000 users), cloud SaaS is almost always the lower total cost option when internal staffing is included. At large enterprise scale (100,000+ users), the subscription cost alone can exceed the cost of a self-hosted deployment with dedicated staff — particularly for IGA platforms where per-user pricing compounds.
 
