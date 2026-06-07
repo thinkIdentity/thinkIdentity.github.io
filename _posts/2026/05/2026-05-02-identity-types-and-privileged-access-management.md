@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Beyond the Employee — Every Type of Identity Your IAM Programme Must Manage"
+title: "Beyond the Employee — Every Type of Identity Your IAM program Must Manage"
 date: 2026-05-02
 category: iam
 categories: [iam]
@@ -333,7 +333,7 @@ The table below shows what mainstream IAM tooling can and cannot do across ident
 | Privileged Account | Access reviews for admin roles; SoD on admin role assignments | Full lifecycle — vault, JIT, session recording, rotation | Group membership only |
 | Break-Glass Account | Can include in review campaigns | Native break-glass workflows, emergency access management | Account storage |
 
-The key insight: **no single tool covers the entire matrix well**. IGA tools govern *who has access to what*. PAM tools control *how that access is used in real time*. A mature IAM programme needs both, ideally integrated so that IGA certifications can trigger PAM policy changes and PAM session data feeds back into governance dashboards.
+The key insight: **no single tool covers the entire matrix well**. IGA tools govern *who has access to what*. PAM tools control *how that access is used in real time*. A mature IAM program needs both, ideally integrated so that IGA certifications can trigger PAM policy changes and PAM session data feeds back into governance dashboards.
 
 ---
 
@@ -374,7 +374,7 @@ quadrantChart
 
 ## Where to Start — A Practical Sequence
 
-For an organisation building or maturing its identity programme, the sequencing matters:
+For an organisation building or maturing its identity program, the sequencing matters:
 
 ```mermaid
 flowchart TD

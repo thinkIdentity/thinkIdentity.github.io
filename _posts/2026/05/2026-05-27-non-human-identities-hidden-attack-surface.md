@@ -137,7 +137,7 @@ flowchart LR
     style Result fill:#7f1d1d,stroke:#ef4444,color:#fff
 ```
 
-The key insight: NHI creation is decentralised. Developers create service accounts, API keys, and pipeline tokens as part of their daily work. There is no central gate that enforces governance at the point of creation. By the time a governance programme tries to inventory NHI, hundreds or thousands already exist — most without a named owner, many with permissions far broader than their original purpose required.
+The key insight: NHI creation is decentralised. Developers create service accounts, API keys, and pipeline tokens as part of their daily work. There is no central gate that enforces governance at the point of creation. By the time a governance program tries to inventory NHI, hundreds or thousands already exist — most without a named owner, many with permissions far broader than their original purpose required.
 
 ---
 

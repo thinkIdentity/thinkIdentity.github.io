@@ -161,7 +161,7 @@ Common HR quality failures and their IGA consequences:
 | Re-hire creates new employee record (new EMP ID) | Prior access history lost; IGA treats returning employee as brand new |
 | Position change delayed in HR (common 2–4 week lag) | Mover entitlements not updated until HR catches up; SoD violations exist during gap |
 
-**The practical implication:** No IGA programme should go live without an HR data quality assessment first. IGA amplifies whatever is in HR — accurate data at scale becomes accurate governance at scale; inaccurate data at scale becomes inaccurate governance at scale, enforced automatically.
+**The practical implication:** No IGA program should go live without an HR data quality assessment first. IGA amplifies whatever is in HR — accurate data at scale becomes accurate governance at scale; inaccurate data at scale becomes inaccurate governance at scale, enforced automatically.
 
 ---
 
@@ -280,7 +280,7 @@ flowchart TD
     style Action2 fill:#1e4620,stroke:#22c55e,color:#fff
 ```
 
-Orphaned and ghost accounts are two of the most common audit findings in any IGA programme. The [2024 Verizon Data Breach Investigations Report](https://www.verizon.com/business/resources/reports/dbir/){:target="_blank"} found that credential abuse — including the use of stale, forgotten accounts — remains a leading initial access vector. IGA's nightly reconciliation scan is the primary control that identifies and remediates these.
+Orphaned and ghost accounts are two of the most common audit findings in any IGA program. The [2024 Verizon Data Breach Investigations Report](https://www.verizon.com/business/resources/reports/dbir/){:target="_blank"} found that credential abuse — including the use of stale, forgotten accounts — remains a leading initial access vector. IGA's nightly reconciliation scan is the primary control that identifies and remediates these.
 
 ---
 
@@ -326,7 +326,7 @@ Partial provisioning is a real operational failure mode: some entitlements grant
 
 ## Application Onboarding — How IGA Learns About an Application
 
-Before IGA can govern access to an application, the application must be onboarded: connected, its entitlement structure mapped, and its accounts correlated to identities. Onboarding is typically the longest and most underestimated phase of an IGA programme.
+Before IGA can govern access to an application, the application must be onboarded: connected, its entitlement structure mapped, and its accounts correlated to identities. Onboarding is typically the longest and most underestimated phase of an IGA program.
 
 **What onboarding produces:**
 1. **Connector configuration:** Protocol, credentials, attribute mapping

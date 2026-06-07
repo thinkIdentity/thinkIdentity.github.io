@@ -79,7 +79,7 @@ These are not incidents at small or poorly resourced organisations. They occurre
 
 ## Six Perspectives on Why PAM Matters
 
-PAM has different implications for each group that interacts with it. Building a programme that works requires understanding all of them.
+PAM has different implications for each group that interacts with it. Building a program that works requires understanding all of them.
 
 | Perspective | What They See | What They Need |
 |-------------|--------------|----------------|
@@ -359,7 +359,7 @@ The most effective time to detect an exposed credential is before an attacker fi
 
 ## Making PAM Adoption Easy — The Ops Team's Responsibility
 
-The most technically correct PAM architecture fails in practice if developers and application teams find it too difficult to use. When integration is hard, teams take exceptions. When exceptions are normalised, the programme's coverage — and therefore its security guarantee — degrades.
+The most technically correct PAM architecture fails in practice if developers and application teams find it too difficult to use. When integration is hard, teams take exceptions. When exceptions are normalised, the program's coverage — and therefore its security guarantee — degrades.
 
 The PAM operations team has a responsibility that is often understated: **provide the tools that make vault integration the easy path, not the hard one.**
 
